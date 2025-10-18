@@ -1,0 +1,3 @@
+/home/liurs/github/sdl2/stu/chpt2/animate/CMakeFiles/animate.dir
+/home/liurs/github/sdl2/stu/chpt2/animate/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt2/animate/CMakeFiles/rebuild_cache.dir

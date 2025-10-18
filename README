@@ -7,4 +7,8 @@ subsyst interactive:
     game logic, 
     user input
 
-
+chapt2: drawing in SDL
+    basics
+    src & dst rect
+    load & disp textures
+    SDL_image extension

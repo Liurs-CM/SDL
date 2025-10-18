@@ -1,0 +1,3 @@
+/home/liurs/github/sdl2/stu/chpt2/CMakeFiles/rider.dir
+/home/liurs/github/sdl2/stu/chpt2/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt2/CMakeFiles/rebuild_cache.dir
