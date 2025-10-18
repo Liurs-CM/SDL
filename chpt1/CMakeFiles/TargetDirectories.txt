@@ -1,0 +1,3 @@
+/home/liurs/github/sdl2/stu/chpt1/CMakeFiles/hello.dir
+/home/liurs/github/sdl2/stu/chpt1/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt1/CMakeFiles/rebuild_cache.dir

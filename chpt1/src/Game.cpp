@@ -1,11 +1,11 @@
 #include "Game.h"
-#include "stdio.h"
+#include <iostream>
 
 bool Game::init(const char* title, int x_pos, int y_pos, int width,
         int height, int flags)
 {
     //initialize SDL
-    if( SDL_Init(SDL_INIT_EVERYTHING) == )
+    if( SDL_Init(SDL_INIT_EVERYTHING) >= 0 )
     {
         std::cout << "SDL init success\n";
         //init the window
@@ -60,7 +60,7 @@ void Game::handleEvents()
     {
         switch (event.type)
         {
-            case SDL_Quit:
+            case SDL_QUIT:
                 m_bRunning = false;
                 break;
             default:

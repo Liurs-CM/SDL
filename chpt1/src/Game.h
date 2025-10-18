@@ -1,3 +1,4 @@
+#include "SDL.h"
 #ifndef __Game__
 #define __Game__
 class Game
@@ -6,12 +7,13 @@ class Game
         Game() {}
         ~Game() {}
 
-        void init() { m_bRunning = true; }
+        bool init(const char* title, int x_pos, int y_pos, int width,
+        int height, int flags);
 
-        void render() {}
+        void render();
         void update() {}
-        void handleEvents() {}
-        void clean() {}
+        void handleEvents();
+        void clean(); 
 
         //function to access the private running variable
         bool running() { return m_bRunning; }
