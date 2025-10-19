@@ -1,0 +1,4 @@
+/home/liurs/github/sdl2/stu/chpt5/state/CMakeFiles/tags.dir
+/home/liurs/github/sdl2/stu/chpt5/state/CMakeFiles/state.dir
+/home/liurs/github/sdl2/stu/chpt5/state/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt5/state/CMakeFiles/rebuild_cache.dir
