@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/move.dir/src/Enemy.cpp.o CMakeFiles/move.dir/src/Game.cpp.o CMakeFiles/move.dir/src/Player.cpp.o CMakeFiles/move.dir/src/SDLGameObject.cpp.o CMakeFiles/move.dir/src/TextureManager.cpp.o CMakeFiles/move.dir/src/main.cpp.o -o move  -lSDL2 -lSDL2_mixer -lSDL2 -lSDL2_image -lSDL2 -lSDL2_ttf -lSDL2 -lm -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lm 

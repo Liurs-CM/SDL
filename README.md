@@ -1,16 +1,16 @@
-### Game Make-up Flow:
-```
+## Game Make-up Flow:
 1.Initialise  ->  2.Get input   ->  3.Do physics  ->  4.Render  ->  5.Exit
                     |------------------------------------|
-```
 
 ## subsyst interactive:
-#    graphics, 
-#    game logic, 
-#    user input
+-   graphics, 
+-   game logic, 
+-   user input
 
 ## chapt2: drawing in SDL
-#    basics
-#    src & dst rect
-#    load & disp textures
-#    SDL_image extension
+-   basics
+-   src & dst rect
+-   load & disp textures
+-   SDL_image extension
+
+

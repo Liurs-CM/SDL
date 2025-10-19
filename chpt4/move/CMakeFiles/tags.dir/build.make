@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liurs/github/sdl2/stu/chpt3/abstract
+CMAKE_SOURCE_DIR = /home/liurs/github/sdl2/stu/chpt4/move
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liurs/github/sdl2/stu/chpt3/abstract
+CMAKE_BINARY_DIR = /home/liurs/github/sdl2/stu/chpt4/move
 
 # Utility rule file for tags.
 
@@ -67,7 +67,7 @@ include CMakeFiles/tags.dir/compiler_depend.make
 include CMakeFiles/tags.dir/progress.make
 
 CMakeFiles/tags:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/liurs/github/sdl2/stu/chpt3/abstract/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tags file..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/liurs/github/sdl2/stu/chpt4/move/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tags file..."
 	ctags -R -o .tags .
 
 tags: CMakeFiles/tags
@@ -83,6 +83,6 @@ CMakeFiles/tags.dir/clean:
 .PHONY : CMakeFiles/tags.dir/clean
 
 CMakeFiles/tags.dir/depend:
-	cd /home/liurs/github/sdl2/stu/chpt3/abstract && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/liurs/github/sdl2/stu/chpt3/abstract /home/liurs/github/sdl2/stu/chpt3/abstract /home/liurs/github/sdl2/stu/chpt3/abstract /home/liurs/github/sdl2/stu/chpt3/abstract /home/liurs/github/sdl2/stu/chpt3/abstract/CMakeFiles/tags.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/liurs/github/sdl2/stu/chpt4/move && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/liurs/github/sdl2/stu/chpt4/move /home/liurs/github/sdl2/stu/chpt4/move /home/liurs/github/sdl2/stu/chpt4/move /home/liurs/github/sdl2/stu/chpt4/move /home/liurs/github/sdl2/stu/chpt4/move/CMakeFiles/tags.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/tags.dir/depend
 

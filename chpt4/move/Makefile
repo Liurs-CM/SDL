@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liurs/github/sdl2/stu/chpt3/abstract
+CMAKE_SOURCE_DIR = /home/liurs/github/sdl2/stu/chpt4/move
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liurs/github/sdl2/stu/chpt3/abstract
+CMAKE_BINARY_DIR = /home/liurs/github/sdl2/stu/chpt4/move
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liurs/github/sdl2/stu/chpt3/abstract/CMakeFiles /home/liurs/github/sdl2/stu/chpt3/abstract//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liurs/github/sdl2/stu/chpt4/move/CMakeFiles /home/liurs/github/sdl2/stu/chpt4/move//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liurs/github/sdl2/stu/chpt3/abstract/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liurs/github/sdl2/stu/chpt4/move/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,24 +130,24 @@ tags/fast:
 .PHONY : tags/fast
 
 #=============================================================================
-# Target rules for targets named abstract
+# Target rules for targets named move
 
 # Build rule for target.
-abstract: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 abstract
-.PHONY : abstract
+move: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 move
+.PHONY : move
 
 # fast build rule for target.
-abstract/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/build
-.PHONY : abstract/fast
+move/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/build
+.PHONY : move/fast
 
 src/Enemy.o: src/Enemy.cpp.o
 .PHONY : src/Enemy.o
 
 # target to build an object file
 src/Enemy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Enemy.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Enemy.cpp.o
 .PHONY : src/Enemy.cpp.o
 
 src/Enemy.i: src/Enemy.cpp.i
@@ -155,7 +155,7 @@ src/Enemy.i: src/Enemy.cpp.i
 
 # target to preprocess a source file
 src/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Enemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Enemy.cpp.i
 .PHONY : src/Enemy.cpp.i
 
 src/Enemy.s: src/Enemy.cpp.s
@@ -163,7 +163,7 @@ src/Enemy.s: src/Enemy.cpp.s
 
 # target to generate assembly for a file
 src/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Enemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Enemy.cpp.s
 .PHONY : src/Enemy.cpp.s
 
 src/Game.o: src/Game.cpp.o
@@ -171,7 +171,7 @@ src/Game.o: src/Game.cpp.o
 
 # target to build an object file
 src/Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Game.cpp.o
 .PHONY : src/Game.cpp.o
 
 src/Game.i: src/Game.cpp.i
@@ -179,7 +179,7 @@ src/Game.i: src/Game.cpp.i
 
 # target to preprocess a source file
 src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Game.cpp.i
 .PHONY : src/Game.cpp.i
 
 src/Game.s: src/Game.cpp.s
@@ -187,7 +187,7 @@ src/Game.s: src/Game.cpp.s
 
 # target to generate assembly for a file
 src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
 src/Player.o: src/Player.cpp.o
@@ -195,7 +195,7 @@ src/Player.o: src/Player.cpp.o
 
 # target to build an object file
 src/Player.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Player.cpp.o
 .PHONY : src/Player.cpp.o
 
 src/Player.i: src/Player.cpp.i
@@ -203,7 +203,7 @@ src/Player.i: src/Player.cpp.i
 
 # target to preprocess a source file
 src/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Player.cpp.i
 .PHONY : src/Player.cpp.i
 
 src/Player.s: src/Player.cpp.s
@@ -211,7 +211,7 @@ src/Player.s: src/Player.cpp.s
 
 # target to generate assembly for a file
 src/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
 src/SDLGameObject.o: src/SDLGameObject.cpp.o
@@ -219,7 +219,7 @@ src/SDLGameObject.o: src/SDLGameObject.cpp.o
 
 # target to build an object file
 src/SDLGameObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/SDLGameObject.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/SDLGameObject.cpp.o
 .PHONY : src/SDLGameObject.cpp.o
 
 src/SDLGameObject.i: src/SDLGameObject.cpp.i
@@ -227,7 +227,7 @@ src/SDLGameObject.i: src/SDLGameObject.cpp.i
 
 # target to preprocess a source file
 src/SDLGameObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/SDLGameObject.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/SDLGameObject.cpp.i
 .PHONY : src/SDLGameObject.cpp.i
 
 src/SDLGameObject.s: src/SDLGameObject.cpp.s
@@ -235,7 +235,7 @@ src/SDLGameObject.s: src/SDLGameObject.cpp.s
 
 # target to generate assembly for a file
 src/SDLGameObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/SDLGameObject.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/SDLGameObject.cpp.s
 .PHONY : src/SDLGameObject.cpp.s
 
 src/TextureManager.o: src/TextureManager.cpp.o
@@ -243,7 +243,7 @@ src/TextureManager.o: src/TextureManager.cpp.o
 
 # target to build an object file
 src/TextureManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/TextureManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/TextureManager.cpp.o
 .PHONY : src/TextureManager.cpp.o
 
 src/TextureManager.i: src/TextureManager.cpp.i
@@ -251,7 +251,7 @@ src/TextureManager.i: src/TextureManager.cpp.i
 
 # target to preprocess a source file
 src/TextureManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/TextureManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/TextureManager.cpp.i
 .PHONY : src/TextureManager.cpp.i
 
 src/TextureManager.s: src/TextureManager.cpp.s
@@ -259,7 +259,7 @@ src/TextureManager.s: src/TextureManager.cpp.s
 
 # target to generate assembly for a file
 src/TextureManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/TextureManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/TextureManager.cpp.s
 .PHONY : src/TextureManager.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -267,7 +267,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -275,7 +275,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -283,7 +283,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -295,7 +295,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tags"
-	@echo "... abstract"
+	@echo "... move"
 	@echo "... src/Enemy.o"
 	@echo "... src/Enemy.i"
 	@echo "... src/Enemy.s"
