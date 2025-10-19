@@ -1,0 +1,4 @@
+/home/liurs/github/sdl2/stu/chpt2/framework/CMakeFiles/tags.dir
+/home/liurs/github/sdl2/stu/chpt2/framework/CMakeFiles/framework.dir
+/home/liurs/github/sdl2/stu/chpt2/framework/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt2/framework/CMakeFiles/rebuild_cache.dir

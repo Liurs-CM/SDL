@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/game_obj.dir/src/Game.cpp.o CMakeFiles/game_obj.dir/src/GameObject.cpp.o CMakeFiles/game_obj.dir/src/Player.cpp.o CMakeFiles/game_obj.dir/src/TextureManager.cpp.o CMakeFiles/game_obj.dir/src/main.cpp.o -o game_obj  -lSDL2 -lSDL2_mixer -lSDL2 -lSDL2_image -lSDL2 -lSDL2_ttf -lSDL2 -lm -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lm 

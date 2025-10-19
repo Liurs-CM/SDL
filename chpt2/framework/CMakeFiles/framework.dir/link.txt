@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/framework.dir/src/Game.cpp.o CMakeFiles/framework.dir/src/TextureManager.cpp.o CMakeFiles/framework.dir/src/main.cpp.o -o framework  -lSDL2 -lSDL2_mixer -lSDL2 -lSDL2_image -lSDL2 -lSDL2_ttf -lSDL2 -lm -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lm 

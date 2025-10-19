@@ -1,0 +1,4 @@
+/home/liurs/github/sdl2/stu/chpt3/polymorphism/CMakeFiles/tags.dir
+/home/liurs/github/sdl2/stu/chpt3/polymorphism/CMakeFiles/polymorphism.dir
+/home/liurs/github/sdl2/stu/chpt3/polymorphism/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt3/polymorphism/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+/home/liurs/github/sdl2/stu/chpt3/game_obj/CMakeFiles/tags.dir
+/home/liurs/github/sdl2/stu/chpt3/game_obj/CMakeFiles/game_obj.dir
+/home/liurs/github/sdl2/stu/chpt3/game_obj/CMakeFiles/edit_cache.dir
+/home/liurs/github/sdl2/stu/chpt3/game_obj/CMakeFiles/rebuild_cache.dir
