@@ -3,6 +3,7 @@
 graph LR;
 1.[Initialise]  -->  2.[Get input]   -->  3.[Do physics]  -->  4.[Render]  -->  5.[Exit];
 2.[Get input] --> 4.[Render];
+```
 
 ## subsyst interactive:
 -   graphics, 
