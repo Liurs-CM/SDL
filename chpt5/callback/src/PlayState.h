@@ -1,7 +1,7 @@
 #ifndef __PlayState__
 #define __PlayState__
-#include <vector>
 #include "GameState.h"
+#include <vector>
 
 class GameObject;
 class SDLGameObject;

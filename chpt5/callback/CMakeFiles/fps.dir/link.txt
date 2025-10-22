@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/fps.dir/src/Enemy.cpp.o CMakeFiles/fps.dir/src/Game.cpp.o CMakeFiles/fps.dir/src/Player.cpp.o CMakeFiles/fps.dir/src/SDLGameObject.cpp.o CMakeFiles/fps.dir/src/TextureManager.cpp.o CMakeFiles/fps.dir/src/main.cpp.o -o fps  -lSDL2 -lSDL2_mixer -lSDL2 -lSDL2_image -lSDL2 -lSDL2_ttf -lSDL2 -lm -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lm 
