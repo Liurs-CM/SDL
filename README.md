@@ -16,4 +16,9 @@ graph LR;
 -   load & disp textures
 -   SDL_image extension
 
-
+## chapt6: data-driven design
+-   loading xml using TinyXML lib
+-   creating a Distributed Factory
+-   loading obj dynamically using the factory and an XML file
+-   parsing a state from an XML file
+-   fitting everything together into the framework
