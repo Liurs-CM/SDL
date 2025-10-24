@@ -22,3 +22,10 @@ graph LR;
 -   loading obj dynamically using the factory and an XML file
 -   parsing a state from an XML file
 -   fitting everything together into the framework
+
+## chapt7: Tile Maps
+-   what
+-   tile sheet
+-   creating maps
+-   parsing a state from a tiled map
+-   loading and displaying a tile-based map in SDL 2.0
