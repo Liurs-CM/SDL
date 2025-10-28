@@ -1,17 +1,21 @@
 #ifndef __Game__
 #define __Game__
 #include "SDL.h"
+#include "TextureManager.h"
 
 class Game
 {
     public:
+        Game() {}
         ~Game() {}
         bool init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen);
         void render();
         void update();
         void handleEvents();
         void clean();
+	    void quit() { m_bRunning = false; }
         bool running() { frameStart = SDL_GetTicks(); return m_bRunning; }
+        SDL_Renderer* getRenderer() const { return m_pRenderer; }
         void syncFPS();
         static Game* Instance()
         {
@@ -23,7 +27,6 @@ class Game
             return s_pInstance;
         }
     private:
-        Game() {}
         int m_gameWidth;
         int m_gameHeight;
         Uint32 frameStart;

@@ -1,5 +1,6 @@
 #include "defs.h"
 #include "Game.h"
+#include "SDL_image.h"
 #include <iostream>
 
 Game* Game::s_pInstance = 0;
@@ -45,12 +46,19 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
     std::cout << "init success\n";
     m_bRunning = true;
 
+    if(!TheTextureManager::Instance()->load("assets/pilot.png", "pilot", m_pRenderer))
+    {
+        std::cout << "load img to texture fail\n";
+        return false;
+    }
+
     return true;
 }
 
 void Game::render()
 {
     SDL_RenderClear(m_pRenderer);
+    TheTextureManager::Instance()->draw("pilot", 100, 100, 64, 64, m_pRenderer);
     SDL_RenderPresent(m_pRenderer);
 }
 
