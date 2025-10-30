@@ -1,6 +1,7 @@
 #ifndef __Vector2D__
 #define __Vector2D__
 #include <cmath>
+#include <iostream>
 class Vector2D
 {
     public:
@@ -65,6 +66,12 @@ class Vector2D
             {
                 (*this) *= 1 / l;
             }
+        }
+
+        friend std::ostream& operator<<(std::ostream& os, const Vector2D& vec)
+        {
+            os << "(" << vec.m_x << ", " << vec.m_y << ")";
+            return os;
         }
     private:
         float m_x;

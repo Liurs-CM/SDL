@@ -1,6 +1,8 @@
 #include "defs.h"
 #include "Game.h"
 #include "SDL_image.h"
+#include "TextureManager.h"
+#include "InputHandler.h"
 #include <iostream>
 
 Game* Game::s_pInstance = 0;
@@ -43,6 +45,8 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
         return false;
     }
 
+    pos = Vector2D(100,100);
+    TheInputHandler::Instance()->initialiseJoysticks();
     std::cout << "init success\n";
     m_bRunning = true;
 
@@ -58,28 +62,38 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
 void Game::render()
 {
     SDL_RenderClear(m_pRenderer);
-    TheTextureManager::Instance()->draw("pilot", 100, 100, 64, 64, m_pRenderer);
+    TheTextureManager::Instance()->draw("pilot", pos.getX(), pos.getY(), 64, 64, m_pRenderer);
     SDL_RenderPresent(m_pRenderer);
 }
 
 void Game::update()
 {
+    TheInputHandler::Instance()->update();
+    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
+    {
+        pos += Vector2D(0,-1);
+        //std::cout << pos << "move up\n";
+    }
+    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_S))
+    {
+        pos += Vector2D(0,1);
+        //std::cout << pos << "move down\n";
+    }
+    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
+    {
+        pos += Vector2D(-1,0);
+        //std::cout << pos << "move left\n";
+    }
+    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
+    {
+        pos += Vector2D(1,0);
+        //std::cout << pos << "move right\n";
+    }
 }
 
 void Game::handleEvents()
 {
-    SDL_Event event;
-    if(SDL_PollEvent(&event))
-    {
-        switch(event.type)
-        {
-            case SDL_QUIT:
-                m_bRunning = false;
-                break;
-            default:
-                break;
-        }
-    }
+    TheInputHandler::Instance()->update();
 }
 
 void Game::clean()
@@ -87,6 +101,7 @@ void Game::clean()
     std::cout << "cleaning game\n";
     SDL_DestroyWindow(m_pWindow);
     SDL_DestroyRenderer(m_pRenderer);
+    TheInputHandler::Instance()->clean();
     SDL_Quit();
 }
 

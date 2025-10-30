@@ -5,7 +5,7 @@
 int main(int argc, char* argv[])
 {
     std::cout << "game initing...\n";
-    if(TheGame::Instance()->init("SDL2_Window", SCR_X, SCR_Y, SCR_W, SCR_H, false))
+    if(TheGame::Instance()->init("SDL2 Game Shoot", SCR_X, SCR_Y, SCR_W, SCR_H, false))
     {
         std::cout << "game initing success!\n";
         while(TheGame::Instance()->running())

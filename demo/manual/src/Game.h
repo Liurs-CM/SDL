@@ -1,12 +1,12 @@
 #ifndef __Game__
 #define __Game__
 #include "SDL.h"
-#include "TextureManager.h"
+#include "Vector2D.h"
 
 class Game
 {
     public:
-        Game() {}
+        Game() : pos(0,0) {}
         ~Game() {}
         bool init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen);
         void render();
@@ -35,6 +35,7 @@ class Game
         SDL_Window* m_pWindow;
         SDL_Renderer* m_pRenderer;
         static Game* s_pInstance;
+        Vector2D pos;
 };
 
 typedef Game TheGame;

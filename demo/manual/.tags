@@ -31,7 +31,7 @@
 !_TAG_OUTPUT_VERSION	0.0	/current.age/
 !_TAG_PARSER_VERSION!C++	1.1	/current.age/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/liurs/github/sdl2/stu/demo/manul/	//
+!_TAG_PROC_CWD	/home/liurs/github/sdl2/stu/demo/manual/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
@@ -46,10 +46,16 @@
 !_TAG_ROLE_DESCRIPTION!C++!partition	imported	/imported with "imported ..."/
 DELAY_TIME	src/defs.h	/^#define DELAY_TIME /;"	d
 FPS	src/defs.h	/^#define FPS /;"	d
-Game	src/Game.h	/^        Game() {}$/;"	f	class:Game
+Game	src/Game.h	/^        Game() : pos(0,0) {}$/;"	f	class:Game
 Game	src/Game.h	/^class Game$/;"	c
+InputHandler	src/InputHandler.cpp	/^InputHandler::InputHandler() : m_mousePosition(new Vector2D(0, 0))$/;"	f	class:InputHandler
+InputHandler	src/InputHandler.h	/^class InputHandler$/;"	c
 Instance	src/Game.h	/^        static Game* Instance()$/;"	f	class:Game	typeref:typename:Game *
+Instance	src/InputHandler.h	/^        static InputHandler* Instance()$/;"	f	class:InputHandler	typeref:typename:InputHandler *
 Instance	src/TextureManager.h	/^        static TextureManager* Instance()$/;"	f	class:TextureManager	typeref:typename:TextureManager *
+LEFT	src/InputHandler.h	/^	LEFT = 0,$/;"	e	enum:mouse_buttons
+MIDDLE	src/InputHandler.h	/^	MIDDLE = 1,$/;"	e	enum:mouse_buttons
+RIGHT	src/InputHandler.h	/^	RIGHT = 2$/;"	e	enum:mouse_buttons
 SCR_H	src/defs.h	/^#define SCR_H /;"	d
 SCR_W	src/defs.h	/^#define SCR_W /;"	d
 SCR_X	src/defs.h	/^#define SCR_X /;"	d
@@ -57,35 +63,61 @@ SCR_Y	src/defs.h	/^#define SCR_Y /;"	d
 TextureManager	src/TextureManager.h	/^        TextureManager(){}$/;"	f	class:TextureManager
 TextureManager	src/TextureManager.h	/^class TextureManager$/;"	c
 TheGame	src/Game.h	/^typedef Game TheGame;$/;"	t	typeref:typename:Game
+TheInputHandler	src/InputHandler.h	/^typedef InputHandler TheInputHandler;$/;"	t	typeref:typename:InputHandler
 TheTextureManager	src/TextureManager.h	/^typedef TextureManager TheTextureManager;$/;"	t	typeref:typename:TextureManager
 Vector2D	src/Vector2D.h	/^        Vector2D(float x, float y): m_x(x), m_y(y) {}$/;"	f	class:Vector2D
 Vector2D	src/Vector2D.h	/^class Vector2D$/;"	c
 __Game__	src/Game.h	/^#define __Game__$/;"	d
+__InputHandler__	src/InputHandler.h	/^#define __InputHandler__$/;"	d
 __TextureManager__	src/TextureManager.h	/^#define __TextureManager__$/;"	d
 __Vector2D__	src/Vector2D.h	/^#define __Vector2D__$/;"	d
 __def__	src/defs.h	/^#define __def__$/;"	d
 clean	src/Game.cpp	/^void Game::clean()$/;"	f	class:Game	typeref:typename:void
+clean	src/InputHandler.cpp	/^void InputHandler::clean()$/;"	f	class:InputHandler	typeref:typename:void
 clearFromTextureMap	src/TextureManager.cpp	/^void TextureManager::clearFromTextureMap(std::string id)$/;"	f	class:TextureManager	typeref:typename:void
 draw	src/TextureManager.cpp	/^void TextureManager::draw($/;"	f	class:TextureManager	typeref:typename:void
 frameStart	src/Game.h	/^        Uint32 frameStart;$/;"	m	class:Game	typeref:typename:Uint32
 frameTime	src/Game.h	/^        Uint32 frameTime;$/;"	m	class:Game	typeref:typename:Uint32
+getButtonState	src/InputHandler.h	/^        bool getButtonState(int joy, int buttonNumber)$/;"	f	class:InputHandler	typeref:typename:bool
+getMouseButtonState	src/InputHandler.h	/^        bool getMouseButtonState(int buttonNumber)$/;"	f	class:InputHandler	typeref:typename:bool
+getMousePosition	src/InputHandler.h	/^        Vector2D* getMousePosition()$/;"	f	class:InputHandler	typeref:typename:Vector2D *
 getRenderer	src/Game.h	/^        SDL_Renderer* getRenderer() const { return m_pRenderer; }$/;"	f	class:Game	typeref:typename:SDL_Renderer *
 getX	src/Vector2D.h	/^        float getX() { return m_x; }$/;"	f	class:Vector2D	typeref:typename:float
 getY	src/Vector2D.h	/^        float getY() { return m_y; }$/;"	f	class:Vector2D	typeref:typename:float
 handleEvents	src/Game.cpp	/^void Game::handleEvents()$/;"	f	class:Game	typeref:typename:void
 init	src/Game.cpp	/^bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen)$/;"	f	class:Game	typeref:typename:bool
+initialiseJoysticks	src/InputHandler.cpp	/^void InputHandler::initialiseJoysticks()$/;"	f	class:InputHandler	typeref:typename:void
+isKeyDown	src/InputHandler.cpp	/^bool InputHandler::isKeyDown(SDL_Scancode key)$/;"	f	class:InputHandler	typeref:typename:bool
+joysticksInitialised	src/InputHandler.h	/^        bool joysticksInitialised() { return m_bJoysticksInitialised; }$/;"	f	class:InputHandler	typeref:typename:bool
 length	src/Vector2D.h	/^        float length() { return sqrt(m_x * m_x + m_y * m_y); }$/;"	f	class:Vector2D	typeref:typename:float
 load	src/TextureManager.cpp	/^bool TextureManager::load($/;"	f	class:TextureManager	typeref:typename:bool
+m_bJoysticksInitialised	src/InputHandler.h	/^        bool m_bJoysticksInitialised;$/;"	m	class:InputHandler	typeref:typename:bool
 m_bRunning	src/Game.h	/^        bool m_bRunning;$/;"	m	class:Game	typeref:typename:bool
+m_buttonStates	src/InputHandler.h	/^        std::vector<std::vector<bool>> m_buttonStates;$/;"	m	class:InputHandler	typeref:typename:std::vector<std::vector<bool>>
 m_gameHeight	src/Game.h	/^        int m_gameHeight;$/;"	m	class:Game	typeref:typename:int
 m_gameWidth	src/Game.h	/^        int m_gameWidth;$/;"	m	class:Game	typeref:typename:int
+m_joystickDeadZone	src/InputHandler.h	/^        const int m_joystickDeadZone = 10000;$/;"	m	class:InputHandler	typeref:typename:const int
+m_joystickValues	src/InputHandler.h	/^        std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;$/;"	m	class:InputHandler	typeref:typename:std::vector<std::pair<Vector2D *,Vector2D * >>
+m_joysticks	src/InputHandler.h	/^        std::vector<SDL_Joystick*> m_joysticks;$/;"	m	class:InputHandler	typeref:typename:std::vector<SDL_Joystick * >
+m_keystates	src/InputHandler.h	/^        const Uint8* m_keystates;$/;"	m	class:InputHandler	typeref:typename:const Uint8 *
+m_mouseButtonStates	src/InputHandler.h	/^        std::vector<bool> m_mouseButtonStates;$/;"	m	class:InputHandler	typeref:typename:std::vector<bool>
+m_mousePosition	src/InputHandler.h	/^        Vector2D* m_mousePosition;$/;"	m	class:InputHandler	typeref:typename:Vector2D *
 m_pRenderer	src/Game.h	/^        SDL_Renderer* m_pRenderer;$/;"	m	class:Game	typeref:typename:SDL_Renderer *
 m_pWindow	src/Game.h	/^        SDL_Window* m_pWindow;$/;"	m	class:Game	typeref:typename:SDL_Window *
 m_textureMap	src/TextureManager.h	/^        std::map<std::string, SDL_Texture*> m_textureMap;$/;"	m	class:TextureManager	typeref:typename:std::map<std::string,SDL_Texture * >
 m_x	src/Vector2D.h	/^        float m_x;$/;"	m	class:Vector2D	typeref:typename:float
 m_y	src/Vector2D.h	/^        float m_y;$/;"	m	class:Vector2D	typeref:typename:float
 main	src/main.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+mouse_buttons	src/InputHandler.h	/^enum mouse_buttons$/;"	g
 normalize	src/Vector2D.h	/^        void normalize()$/;"	f	class:Vector2D	typeref:typename:void
+onJoystickAxisMove	src/InputHandler.cpp	/^void InputHandler::onJoystickAxisMove(SDL_Event& event) $/;"	f	class:InputHandler	typeref:typename:void
+onJoystickButtonDown	src/InputHandler.cpp	/^void InputHandler::onJoystickButtonDown(SDL_Event& event) $/;"	f	class:InputHandler	typeref:typename:void
+onJoystickButtonUp	src/InputHandler.cpp	/^void InputHandler::onJoystickButtonUp(SDL_Event& event)$/;"	f	class:InputHandler	typeref:typename:void
+onKeyDown	src/InputHandler.cpp	/^void InputHandler::onKeyDown()$/;"	f	class:InputHandler	typeref:typename:void
+onKeyUp	src/InputHandler.cpp	/^void InputHandler::onKeyUp()$/;"	f	class:InputHandler	typeref:typename:void
+onMouseButtonDown	src/InputHandler.cpp	/^void InputHandler::onMouseButtonDown(SDL_Event& event)$/;"	f	class:InputHandler	typeref:typename:void
+onMouseButtonUp	src/InputHandler.cpp	/^void InputHandler::onMouseButtonUp(SDL_Event& event)$/;"	f	class:InputHandler	typeref:typename:void
+onMouseMove	src/InputHandler.cpp	/^void InputHandler::onMouseMove(SDL_Event& event)$/;"	f	class:InputHandler	typeref:typename:void
 operator *	src/Vector2D.h	/^        Vector2D operator*(float scalar)$/;"	f	class:Vector2D	typeref:typename:Vector2D
 operator *=	src/Vector2D.h	/^        Vector2D& operator*=(float scalar)$/;"	f	class:Vector2D	typeref:typename:Vector2D &
 operator +	src/Vector2D.h	/^        Vector2D operator+(const Vector2D& v2) const$/;"	f	class:Vector2D	typeref:typename:Vector2D
@@ -94,15 +126,23 @@ operator -	src/Vector2D.h	/^        Vector2D operator-(const Vector2D& v2) const
 operator -=	src/Vector2D.h	/^        Vector2D& operator-=(const Vector2D& v2)$/;"	f	class:Vector2D	typeref:typename:Vector2D &
 operator /	src/Vector2D.h	/^        Vector2D operator\/(float scalar)$/;"	f	class:Vector2D	typeref:typename:Vector2D
 operator /=	src/Vector2D.h	/^        Vector2D& operator\/=(float scalar)$/;"	f	class:Vector2D	typeref:typename:Vector2D &
+operator <<	src/Vector2D.h	/^        friend std::ostream& operator<<(std::ostream& os, const Vector2D& vec)$/;"	f	typeref:typename:std::ostream &
+pos	src/Game.h	/^        Vector2D pos;$/;"	m	class:Game	typeref:typename:Vector2D
 quit	src/Game.h	/^	    void quit() { m_bRunning = false; }$/;"	f	class:Game	typeref:typename:void
 render	src/Game.cpp	/^void Game::render()$/;"	f	class:Game	typeref:typename:void
 running	src/Game.h	/^        bool running() { frameStart = SDL_GetTicks(); return m_bRunning; }$/;"	f	class:Game	typeref:typename:bool
 s_pInstance	src/Game.cpp	/^Game* Game::s_pInstance = 0;$/;"	m	class:Game	typeref:typename:Game *
 s_pInstance	src/Game.h	/^        static Game* s_pInstance;$/;"	m	class:Game	typeref:typename:Game *
+s_pInstance	src/InputHandler.cpp	/^InputHandler* InputHandler::s_pInstance = 0;$/;"	m	class:InputHandler	typeref:typename:InputHandler *
+s_pInstance	src/InputHandler.h	/^        static InputHandler* s_pInstance;$/;"	m	class:InputHandler	typeref:typename:InputHandler *
 s_pInstance	src/TextureManager.cpp	/^TextureManager* TextureManager::s_pInstance = 0;$/;"	m	class:TextureManager	typeref:typename:TextureManager *
 s_pInstance	src/TextureManager.h	/^        static TextureManager* s_pInstance;$/;"	m	class:TextureManager	typeref:typename:TextureManager *
 setX	src/Vector2D.h	/^        void setX(float x) { m_x = x; }$/;"	f	class:Vector2D	typeref:typename:void
 setY	src/Vector2D.h	/^        void setY(float y) { m_y = y; }$/;"	f	class:Vector2D	typeref:typename:void
 syncFPS	src/Game.cpp	/^void Game::syncFPS()$/;"	f	class:Game	typeref:typename:void
 update	src/Game.cpp	/^void Game::update()$/;"	f	class:Game	typeref:typename:void
+update	src/InputHandler.cpp	/^void InputHandler::update()$/;"	f	class:InputHandler	typeref:typename:void
+xvalue	src/InputHandler.cpp	/^int InputHandler::xvalue(int joy, int stick)$/;"	f	class:InputHandler	typeref:typename:int
+yvalue	src/InputHandler.cpp	/^int InputHandler::yvalue(int joy, int stick)$/;"	f	class:InputHandler	typeref:typename:int
 ~Game	src/Game.h	/^        ~Game() {}$/;"	f	class:Game
+~InputHandler	src/InputHandler.h	/^        ~InputHandler() { delete m_mousePosition; }$/;"	f	class:InputHandler
