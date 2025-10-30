@@ -6,7 +6,7 @@
 class Game
 {
     public:
-        Game() : pos(0,0) {}
+        Game() : pos(0,0), bulletPos(0,0) {}
         ~Game() {}
         bool init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen);
         void render();
@@ -36,6 +36,7 @@ class Game
         SDL_Renderer* m_pRenderer;
         static Game* s_pInstance;
         Vector2D pos;
+        Vector2D bulletPos;
 };
 
 typedef Game TheGame;

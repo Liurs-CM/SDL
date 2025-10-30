@@ -46,7 +46,7 @@
 !_TAG_ROLE_DESCRIPTION!C++!partition	imported	/imported with "imported ..."/
 DELAY_TIME	src/defs.h	/^#define DELAY_TIME /;"	d
 FPS	src/defs.h	/^#define FPS /;"	d
-Game	src/Game.h	/^        Game() : pos(0,0) {}$/;"	f	class:Game
+Game	src/Game.h	/^        Game() : pos(0,0), bulletPos(0,0) {}$/;"	f	class:Game
 Game	src/Game.h	/^class Game$/;"	c
 InputHandler	src/InputHandler.cpp	/^InputHandler::InputHandler() : m_mousePosition(new Vector2D(0, 0))$/;"	f	class:InputHandler
 InputHandler	src/InputHandler.h	/^class InputHandler$/;"	c
@@ -72,6 +72,7 @@ __InputHandler__	src/InputHandler.h	/^#define __InputHandler__$/;"	d
 __TextureManager__	src/TextureManager.h	/^#define __TextureManager__$/;"	d
 __Vector2D__	src/Vector2D.h	/^#define __Vector2D__$/;"	d
 __def__	src/defs.h	/^#define __def__$/;"	d
+bulletPos	src/Game.h	/^        Vector2D bulletPos;$/;"	m	class:Game	typeref:typename:Vector2D
 clean	src/Game.cpp	/^void Game::clean()$/;"	f	class:Game	typeref:typename:void
 clean	src/InputHandler.cpp	/^void InputHandler::clean()$/;"	f	class:InputHandler	typeref:typename:void
 clearFromTextureMap	src/TextureManager.cpp	/^void TextureManager::clearFromTextureMap(std::string id)$/;"	f	class:TextureManager	typeref:typename:void

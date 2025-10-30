@@ -55,6 +55,11 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
         std::cout << "load img to texture fail\n";
         return false;
     }
+    if(!TheTextureManager::Instance()->load("assets/bullet.png", "bullet", m_pRenderer))
+    {
+        std::cout << "load img to texture fail\n";
+        return false;
+    }
 
     return true;
 }
@@ -63,6 +68,7 @@ void Game::render()
 {
     SDL_RenderClear(m_pRenderer);
     TheTextureManager::Instance()->draw("pilot", pos.getX(), pos.getY(), 64, 64, m_pRenderer);
+    TheTextureManager::Instance()->draw("bullet", bulletPos.getX()-7, bulletPos.getY()-7, 16, 16, m_pRenderer);
     SDL_RenderPresent(m_pRenderer);
 }
 
@@ -88,6 +94,13 @@ void Game::update()
     {
         pos += Vector2D(1,0);
         //std::cout << pos << "move right\n";
+    }
+    bulletPos += Vector2D(2,0);
+    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+    {
+        bulletPos = pos;
+        bulletPos += Vector2D(32, 32);
+        //std::cout << pos << "move up\n";
     }
 }
 
