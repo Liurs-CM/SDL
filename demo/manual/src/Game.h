@@ -2,11 +2,14 @@
 #define __Game__
 #include "SDL.h"
 #include "Vector2D.h"
+#include "TextureManager.h"
+#include "Player.h"
+#include "GameStateMachine.h"
+#include "PlayState.h"
 
 class Game
 {
     public:
-        Game() : pos(0,0), bulletPos(0,0) {}
         ~Game() {}
         bool init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen);
         void render();
@@ -14,6 +17,7 @@ class Game
         void handleEvents();
         void clean();
 	    void quit() { m_bRunning = false; }
+        GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
         bool running() { frameStart = SDL_GetTicks(); return m_bRunning; }
         SDL_Renderer* getRenderer() const { return m_pRenderer; }
         void syncFPS();
@@ -26,7 +30,10 @@ class Game
             }
             return s_pInstance;
         }
+        int getGameWidth() const { return m_gameWidth; }
+        int getGameHeight() const { return m_gameHeight; }
     private:
+        Game() {}
         int m_gameWidth;
         int m_gameHeight;
         Uint32 frameStart;
@@ -34,9 +41,8 @@ class Game
         bool m_bRunning;
         SDL_Window* m_pWindow;
         SDL_Renderer* m_pRenderer;
+        GameStateMachine* m_pGameStateMachine;
         static Game* s_pInstance;
-        Vector2D pos;
-        Vector2D bulletPos;
 };
 
 typedef Game TheGame;

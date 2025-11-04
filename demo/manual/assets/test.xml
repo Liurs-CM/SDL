@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<STATES>
+    <PLAY>
+        <TEXTURES>
+            <texture filename="assets/pilot.png" ID="pilot"/>
+            <texture filename="assets/bullet.png" ID="bullet"/>
+        </TEXTURES>
+        <OBJECTS>
+            <object type="Player" x="100" y="100" width="64" height="64" textureID="pilot" numFrames="0"/>
+            <object type="Bullet" x="100" y="100" width="16" height="16" textureID="bullet" numFrames="0"/>
+        </OBJECTS>
+    </PLAY>
+</STATES>

@@ -3,6 +3,8 @@
 #include "SDL_image.h"
 #include "TextureManager.h"
 #include "InputHandler.h"
+#include "GameStateMachine.h"
+#include "GameObjectFactory.h"
 #include <iostream>
 
 Game* Game::s_pInstance = 0;
@@ -45,21 +47,14 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
         return false;
     }
 
-    pos = Vector2D(100,100);
     TheInputHandler::Instance()->initialiseJoysticks();
     std::cout << "init success\n";
     m_bRunning = true;
+	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+    TheGameObjectFactory::Instance()->registerType("Bullet", new BulletCreator());
 
-    if(!TheTextureManager::Instance()->load("assets/pilot.png", "pilot", m_pRenderer))
-    {
-        std::cout << "load img to texture fail\n";
-        return false;
-    }
-    if(!TheTextureManager::Instance()->load("assets/bullet.png", "bullet", m_pRenderer))
-    {
-        std::cout << "load img to texture fail\n";
-        return false;
-    }
+	m_pGameStateMachine = new GameStateMachine();
+	m_pGameStateMachine->changeState(new PlayState());
 
     return true;
 }
@@ -67,46 +62,23 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
 void Game::render()
 {
     SDL_RenderClear(m_pRenderer);
-    TheTextureManager::Instance()->draw("pilot", pos.getX(), pos.getY(), 64, 64, m_pRenderer);
-    TheTextureManager::Instance()->draw("bullet", bulletPos.getX()-7, bulletPos.getY()-7, 16, 16, m_pRenderer);
+	m_pGameStateMachine->render();
     SDL_RenderPresent(m_pRenderer);
 }
 
 void Game::update()
 {
-    TheInputHandler::Instance()->update();
-    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
-    {
-        pos += Vector2D(0,-1);
-        //std::cout << pos << "move up\n";
-    }
-    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_S))
-    {
-        pos += Vector2D(0,1);
-        //std::cout << pos << "move down\n";
-    }
-    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
-    {
-        pos += Vector2D(-1,0);
-        //std::cout << pos << "move left\n";
-    }
-    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
-    {
-        pos += Vector2D(1,0);
-        //std::cout << pos << "move right\n";
-    }
-    bulletPos += Vector2D(2,0);
-    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
-    {
-        bulletPos = pos;
-        bulletPos += Vector2D(32, 32);
-        //std::cout << pos << "move up\n";
-    }
+    //TheInputHandler::Instance()->update();
+	m_pGameStateMachine->update();
 }
 
 void Game::handleEvents()
 {
     TheInputHandler::Instance()->update();
+	if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+	{
+		m_pGameStateMachine->changeState(new PlayState());
+	}
 }
 
 void Game::clean()
