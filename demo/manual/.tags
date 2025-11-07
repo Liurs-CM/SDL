@@ -294,8 +294,7 @@ SetIntValue	src/lib/tinyxml.cpp	/^void TiXmlAttribute::SetIntValue( int _value )
 SetLineBreak	src/lib/tinyxml.h	/^	void SetLineBreak( const char* _lineBreak )		{ lineBreak = _lineBreak ? _lineBreak : ""; }$/;"	f	class:TiXmlPrinter	typeref:typename:void
 SetName	src/lib/tinyxml.h	/^	void SetName( const char* _name )	{ name = _name; }				\/\/\/< Set the name of this attribute.$/;"	f	class:TiXmlAttribute	typeref:typename:void
 SetName	src/lib/tinyxml.h	/^	void SetName( const std::string& _name )	{ name = _name; }	$/;"	f	class:TiXmlAttribute	typeref:typename:void
-SetOwner	src/Bullet.h	/^        void SetOwner(Player* player){ owner = player; }$/;"	f	class:Bullet	typeref:typename:void
-SetPosition	src/Bullet.h	/^        void SetPosition(Vector2D pos) { this->m_position = pos + Vector2D(32, 32); }$/;"	f	class:Bullet	typeref:typename:void
+SetPosition	src/Bullet.cpp	/^void Bullet::SetPosition(Vector2D pos) $/;"	f	class:Bullet	typeref:typename:void
 SetStreamPrinting	src/lib/tinyxml.h	/^	void SetStreamPrinting()						{ indent = "";$/;"	f	class:TiXmlPrinter	typeref:typename:void
 SetTabSize	src/lib/tinyxml.h	/^	void SetTabSize( int _tabsize )		{ tabsize = _tabsize; }$/;"	f	class:TiXmlDocument	typeref:typename:void
 SetUserData	src/lib/tinyxml.h	/^	void  SetUserData( void* user )			{ userData = user; }	\/\/\/< Set a pointer to arbitrary user /;"	f	class:TiXmlBase	typeref:typename:void
@@ -505,6 +504,7 @@ assign	src/lib/tinystr.cpp	/^TiXmlString& TiXmlString::assign(const char* str, s
 at	src/lib/tinystr.h	/^	const char& at (size_type index) const$/;"	f	class:TiXmlString	typeref:typename:const char &
 attributeSet	src/lib/tinyxml.h	/^	TiXmlAttributeSet attributeSet;$/;"	m	class:TiXmlElement	typeref:typename:TiXmlAttributeSet
 buffer	src/lib/tinyxml.h	/^	TIXML_STRING buffer;$/;"	m	class:TiXmlPrinter	typeref:typename:TIXML_STRING
+bullet	src/PlayState.h	/^        Bullet* bullet = nullptr;$/;"	m	class:PlayState	typeref:typename:Bullet *
 c_str	src/lib/tinystr.h	/^	const char * c_str () const { return rep_->str; }$/;"	f	class:TiXmlString	typeref:typename:const char *
 capacity	src/lib/tinystr.h	/^		size_type size, capacity;$/;"	m	struct:TiXmlString::Rep	typeref:typename:size_type
 capacity	src/lib/tinystr.h	/^	size_type capacity () const { return rep_->capacity; }$/;"	f	class:TiXmlString	typeref:typename:size_type
@@ -554,6 +554,7 @@ firstChild	src/lib/tinyxml.h	/^	TiXmlNode*		firstChild;$/;"	m	class:TiXmlNode	ty
 frameStart	src/Game.h	/^        Uint32 frameStart;$/;"	m	class:Game	typeref:typename:Uint32
 frameTime	src/Game.h	/^        Uint32 frameTime;$/;"	m	class:Game	typeref:typename:Uint32
 getAnimSpeed	src/LoaderParams.h	/^        int getAnimSpeed() const { return m_animSpeed; }$/;"	f	class:LoaderParams	typeref:typename:int
+getBullet	src/PlayState.h	/^        Bullet* getBullet() { return bullet; }$/;"	f	class:PlayState	typeref:typename:Bullet *
 getButtonState	src/InputHandler.h	/^        bool getButtonState(int joy, int buttonNumber)$/;"	f	class:InputHandler	typeref:typename:bool
 getCallbackID	src/LoaderParams.h	/^        int getCallbackID() const { return m_callbackID; }$/;"	f	class:LoaderParams	typeref:typename:int
 getGameHeight	src/Game.h	/^        int getGameHeight() const { return m_gameHeight; }$/;"	f	class:Game	typeref:typename:int
@@ -564,7 +565,8 @@ getHeight	src/SDLGameObject.h	/^        int getHeight() { return m_height; }$/;"
 getMouseButtonState	src/InputHandler.h	/^        bool getMouseButtonState(int buttonNumber)$/;"	f	class:InputHandler	typeref:typename:bool
 getMousePosition	src/InputHandler.h	/^        Vector2D* getMousePosition()$/;"	f	class:InputHandler	typeref:typename:Vector2D *
 getNumFrames	src/LoaderParams.h	/^        int getNumFrames() const { return m_numFrames; }$/;"	f	class:LoaderParams	typeref:typename:int
-getPosition	src/SDLGameObject.h	/^        Vector2D& getPosition() { return m_position; }$/;"	f	class:SDLGameObject	typeref:typename:Vector2D &
+getPlayer	src/PlayState.h	/^        Player* getPlayer() { return player; }$/;"	f	class:PlayState	typeref:typename:Player *
+getPosition	src/SDLGameObject.h	/^        Vector2D getPosition() { return m_position; }$/;"	f	class:SDLGameObject	typeref:typename:Vector2D
 getRenderer	src/Game.h	/^        SDL_Renderer* getRenderer() const { return m_pRenderer; }$/;"	f	class:Game	typeref:typename:SDL_Renderer *
 getStateID	src/PlayState.h	/^        virtual std::string getStateID() const { return s_playID; }$/;"	f	class:PlayState	typeref:typename:std::string
 getStateMachine	src/Game.h	/^        GameStateMachine* getStateMachine() { return m_pGameStateMachine; }$/;"	f	class:Game	typeref:typename:GameStateMachine *
@@ -699,13 +701,13 @@ operator >	src/lib/tinyxml.h	/^	bool operator>( const TiXmlAttribute& rhs )  con
 operator >=	src/lib/tinystr.h	/^inline bool operator >= (const TiXmlString & a, const TiXmlString & b) { return !(a < b); }$/;"	f	typeref:typename:bool
 operator >>	src/lib/tinyxml.cpp	/^std::istream& operator>> (std::istream & in, TiXmlNode & base)$/;"	f	typeref:typename:std::istream &
 operator [] 	src/lib/tinystr.h	/^	char& operator [] (size_type index) const$/;"	f	class:TiXmlString	typeref:typename:char &
-owner	src/Bullet.h	/^        Player* owner;$/;"	m	class:Bullet	typeref:typename:Player *
 pInstance	src/GameObjectFactory.cpp	/^GameObjectFactory* GameObjectFactory::pInstance = 0;$/;"	m	class:GameObjectFactory	typeref:typename:GameObjectFactory *
 pInstance	src/GameObjectFactory.h	/^        static GameObjectFactory* pInstance;$/;"	m	class:GameObjectFactory	typeref:typename:GameObjectFactory *
 parent	src/lib/tinyxml.h	/^	TiXmlNode*		parent;$/;"	m	class:TiXmlNode	typeref:typename:TiXmlNode *
 parseObjects	src/StateParser.cpp	/^void StateParser::parseObjects(TiXmlElement *pStateRoot, std::vector<GameObject *> *pObjects)$/;"	f	class:StateParser	typeref:typename:void
 parseState	src/StateParser.cpp	/^bool StateParser::parseState(const char* stateFile, std::string stateID, std::vector<GameObject /;"	f	class:StateParser	typeref:typename:bool
 parseTextures	src/StateParser.cpp	/^void StateParser::parseTextures(TiXmlElement* pStateRoot, std::vector<std::string> *pTextureIDs)$/;"	f	class:StateParser	typeref:typename:void
+player	src/PlayState.h	/^        Player* player = nullptr;$/;"	m	class:PlayState	typeref:typename:Player *
 popState	src/GameStateMachine.cpp	/^void GameStateMachine::popState()$/;"	f	class:GameStateMachine	typeref:typename:void
 popStateFlag	src/GameStateMachine.h	/^        bool popStateFlag;$/;"	m	class:GameStateMachine	typeref:typename:bool
 popStatePrivate	src/GameStateMachine.cpp	/^void GameStateMachine::popStatePrivate()$/;"	f	class:GameStateMachine	typeref:typename:void
@@ -735,7 +737,6 @@ sentinel	src/lib/tinyxml.h	/^	TiXmlAttribute sentinel;$/;"	m	class:TiXmlAttribut
 setX	src/Vector2D.h	/^        void setX(float x) { m_x = x; }$/;"	f	class:Vector2D	typeref:typename:void
 setY	src/Vector2D.h	/^        void setY(float y) { m_y = y; }$/;"	f	class:Vector2D	typeref:typename:void
 set_size	src/lib/tinystr.h	/^	void set_size(size_type sz) { rep_->str[ rep_->size = sz ] = '\\0'; }$/;"	f	class:TiXmlString	typeref:typename:void
-shoot	src/Player.cpp	/^void Player::shoot()$/;"	f	class:Player	typeref:typename:void
 simpleTextPrint	src/lib/tinyxml.h	/^	bool simpleTextPrint;$/;"	m	class:TiXmlPrinter	typeref:typename:bool
 size	src/lib/tinystr.h	/^		size_type size, capacity;$/;"	m	struct:TiXmlString::Rep	typeref:typename:size_type
 size	src/lib/tinystr.h	/^	size_type size () const { return rep_->size; }$/;"	f	class:TiXmlString	typeref:typename:size_type

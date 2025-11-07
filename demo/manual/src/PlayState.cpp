@@ -19,6 +19,14 @@ void PlayState::update()
         //TheGame::Instance()->getStateMachine()->pushState(new PauseState());
         std::cout << "exit PlayState" << std::endl;
     }
+    else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+    {
+        if (bullet && player) 
+        {
+            Vector2D ppos = player->getPosition();
+            bullet->SetPosition(ppos);
+        }
+    }
     for(auto* obj : m_gameObjects)
     {
         obj->update();
@@ -39,6 +47,21 @@ bool PlayState::onEnter()
 {
 	StateParser stateParser;
 	stateParser.parseState("assets/test.xml", s_playID, &m_gameObjects, &m_textureIDList);
+    for(auto* obj : m_gameObjects)
+    {
+        if(dynamic_cast<Player*>(obj) != nullptr)
+        {
+            player = static_cast<Player*>(obj);
+        }
+        else if(dynamic_cast<Bullet*>(obj) != nullptr)
+        {
+            bullet = static_cast<Bullet*>(obj);
+        }
+    }
+    if (bullet && player) 
+    {
+        std::cout << "get player bullet" << std::endl;
+    }
     std::cout << "entering PlayState" << std::endl;
     //LevelParser levelParser;
     //pLevel = levelParser.parseLevel("assets/map1.tmx");

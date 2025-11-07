@@ -13,7 +13,7 @@ class SDLGameObject : public GameObject
         virtual void update();
         virtual void clean() {};
         virtual void load(const LoaderParams *pParams);
-        Vector2D& getPosition() { return m_position; }
+        Vector2D getPosition() { return m_position; }
         int getWidth() { return m_width; }
         int getHeight() { return m_height; }
     protected:

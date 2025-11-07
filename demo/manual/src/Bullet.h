@@ -1,5 +1,6 @@
 #ifndef __Bullet__
 #define __Bullet__
+//#include "Player.h"
 #include "SDLGameObject.h"
 #include "GameObjectFactory.h"
 class Player;
@@ -12,10 +13,8 @@ class Bullet : public SDLGameObject
         void update();
         void clean();
         void load(const LoaderParams* pParams);
-        void SetOwner(Player* player){ owner = player; }
-        void SetPosition(Vector2D pos) { this->m_position = pos + Vector2D(32, 32); }
+        void SetPosition(Vector2D pos);
     private:
-        Player* owner;
         void handleInput();
 };
 

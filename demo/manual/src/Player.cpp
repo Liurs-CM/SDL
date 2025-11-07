@@ -41,25 +41,9 @@ void Player::handleInput()
         m_position += Vector2D(1,0);
         //std::cout << m_position << "move right\n";
     }
-    if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
-    {
-        shoot();
-    }
 }
 
 void Player::load(const LoaderParams *pParams)
 {
     SDLGameObject::load(pParams);
 }
-
-void Player::shoot()
-{
-    // 2. 【关键步骤】Player 将自己注入到子弹中！
-    if (m_bullet) {
-        m_bullet->SetOwner(this); // 建立联系！
-        // 3. 设置初始位置
-        m_bullet->SetPosition(m_position);
-        // 4. 发射
-        //m_bullet->Launch();
-    }
-} 
