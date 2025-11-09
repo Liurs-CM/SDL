@@ -2,6 +2,7 @@
 #define __InputHandler__
 #include <vector>
 #include <utility>
+#include <unordered_set>
 #include "SDL.h"
 #include "Vector2D.h"
 
@@ -38,6 +39,7 @@ class InputHandler
             return m_mousePosition;
         }
         bool isKeyDown(SDL_Scancode key);
+        bool wasKeyPressedThisFrame(SDL_Scancode key);
         bool getButtonState(int joy, int buttonNumber)
         {
             return m_buttonStates[joy][buttonNumber];
@@ -56,6 +58,7 @@ class InputHandler
         std::vector<bool> m_mouseButtonStates;
         Vector2D* m_mousePosition;
         const Uint8* m_keystates;
+        std::unordered_set<SDL_Scancode> m_keysPressedThisFrame; // 本帧新按下的键（非 repeat）
         int xvalue(int joy, int stick);
         int yvalue(int joy, int stick);
 

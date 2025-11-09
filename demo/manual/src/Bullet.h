@@ -13,7 +13,9 @@ class Bullet : public SDLGameObject
         void update();
         void clean();
         void load(const LoaderParams* pParams);
+        std::unique_ptr<SDLGameObject> clone();
         void SetPosition(Vector2D pos);
+        bool isDead();
     private:
         void handleInput();
 };

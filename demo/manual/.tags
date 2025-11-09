@@ -498,6 +498,7 @@ __Vector2D__	src/Vector2D.h	/^#define __Vector2D__$/;"	d
 __anon256b08ed0103	src/lib/tinyxml.h	/^{ $/;"	g
 __anon256b08ed0203	src/lib/tinyxml.h	/^	{$/;"	g	class:TiXmlBase
 __anon256b08ed0303	src/lib/tinyxml.h	/^	{$/;"	g	class:TiXmlBase
+__anondc818da40102	src/PlayState.cpp	/^                    [](const std::unique_ptr<Bullet>& b) {$/;"	f	function:PlayState::update	file:
 __def__	src/defs.h	/^#define __def__$/;"	d
 append	src/lib/tinystr.cpp	/^TiXmlString& TiXmlString::append(const char* str, size_type len)$/;"	f	class:TiXmlString	typeref:typename:TiXmlString &
 assign	src/lib/tinystr.cpp	/^TiXmlString& TiXmlString::assign(const char* str, size_type len)$/;"	f	class:TiXmlString	typeref:typename:TiXmlString &
@@ -521,14 +522,18 @@ clean	src/Player.cpp	/^void Player::clean() { }$/;"	f	class:Player	typeref:typen
 clean	src/SDLGameObject.h	/^        virtual void clean() {};$/;"	f	class:SDLGameObject	typeref:typename:void
 clear	src/lib/tinystr.h	/^	void clear ()$/;"	f	class:TiXmlString	typeref:typename:void
 clearFromTextureMap	src/TextureManager.cpp	/^void TextureManager::clearFromTextureMap(std::string id)$/;"	f	class:TextureManager	typeref:typename:void
+clone	src/Bullet.cpp	/^std::unique_ptr<SDLGameObject> Bullet::clone()$/;"	f	class:Bullet	typeref:typename:std::unique_ptr<SDLGameObject>
+clone	src/SDLGameObject.h	/^        virtual std::unique_ptr<SDLGameObject> clone() { return nullptr; }$/;"	f	class:SDLGameObject	typeref:typename:std::unique_ptr<SDLGameObject>
 col	src/lib/tinyxml.h	/^	int col;	\/\/ 0 based.$/;"	m	struct:TiXmlCursor	typeref:typename:int
 condenseWhiteSpace	src/lib/tinyxml.cpp	/^bool TiXmlBase::condenseWhiteSpace = true;$/;"	m	class:TiXmlBase	typeref:typename:bool
 condenseWhiteSpace	src/lib/tinyxml.h	/^	static bool condenseWhiteSpace;$/;"	m	class:TiXmlBase	typeref:typename:bool
 create	src/GameObjectFactory.h	/^        GameObject* create(std::string typeID)$/;"	f	class:GameObjectFactory	typeref:typename:GameObject *
+createBullet	src/PlayState.cpp	/^void PlayState::createBullet()$/;"	f	class:PlayState	typeref:typename:void
 createGameObject	src/Bullet.h	/^        GameObject* createGameObject() const$/;"	f	class:BulletCreator	typeref:typename:GameObject *
 createGameObject	src/Player.h	/^        GameObject* createGameObject() const$/;"	f	class:PlayerCreator	typeref:typename:GameObject *
 cursor	src/lib/tinyxmlparser.cpp	/^	TiXmlCursor		cursor;$/;"	m	class:TiXmlParsingData	typeref:typename:TiXmlCursor	file:
 data	src/lib/tinystr.h	/^	const char * data () const { return rep_->str; }$/;"	f	class:TiXmlString	typeref:typename:const char *
+dbg_num	src/PlayState.h	/^        int dbg_num = 0;$/;"	m	class:PlayState	typeref:typename:int
 depth	src/lib/tinyxml.h	/^	int depth;$/;"	m	class:TiXmlPrinter	typeref:typename:int
 document	src/lib/tinyxml.h	/^	TiXmlDocument*	document;	\/\/ A pointer back to a document, for error reporting.$/;"	m	class:TiXmlAttribute	typeref:typename:TiXmlDocument *
 draw	src/Bullet.cpp	/^void Bullet::draw()$/;"	f	class:Bullet	typeref:typename:void
@@ -554,7 +559,6 @@ firstChild	src/lib/tinyxml.h	/^	TiXmlNode*		firstChild;$/;"	m	class:TiXmlNode	ty
 frameStart	src/Game.h	/^        Uint32 frameStart;$/;"	m	class:Game	typeref:typename:Uint32
 frameTime	src/Game.h	/^        Uint32 frameTime;$/;"	m	class:Game	typeref:typename:Uint32
 getAnimSpeed	src/LoaderParams.h	/^        int getAnimSpeed() const { return m_animSpeed; }$/;"	f	class:LoaderParams	typeref:typename:int
-getBullet	src/PlayState.h	/^        Bullet* getBullet() { return bullet; }$/;"	f	class:PlayState	typeref:typename:Bullet *
 getButtonState	src/InputHandler.h	/^        bool getButtonState(int joy, int buttonNumber)$/;"	f	class:InputHandler	typeref:typename:bool
 getCallbackID	src/LoaderParams.h	/^        int getCallbackID() const { return m_callbackID; }$/;"	f	class:LoaderParams	typeref:typename:int
 getGameHeight	src/Game.h	/^        int getGameHeight() const { return m_gameHeight; }$/;"	f	class:Game	typeref:typename:int
@@ -565,7 +569,6 @@ getHeight	src/SDLGameObject.h	/^        int getHeight() { return m_height; }$/;"
 getMouseButtonState	src/InputHandler.h	/^        bool getMouseButtonState(int buttonNumber)$/;"	f	class:InputHandler	typeref:typename:bool
 getMousePosition	src/InputHandler.h	/^        Vector2D* getMousePosition()$/;"	f	class:InputHandler	typeref:typename:Vector2D *
 getNumFrames	src/LoaderParams.h	/^        int getNumFrames() const { return m_numFrames; }$/;"	f	class:LoaderParams	typeref:typename:int
-getPlayer	src/PlayState.h	/^        Player* getPlayer() { return player; }$/;"	f	class:PlayState	typeref:typename:Player *
 getPosition	src/SDLGameObject.h	/^        Vector2D getPosition() { return m_position; }$/;"	f	class:SDLGameObject	typeref:typename:Vector2D
 getRenderer	src/Game.h	/^        SDL_Renderer* getRenderer() const { return m_pRenderer; }$/;"	f	class:Game	typeref:typename:SDL_Renderer *
 getStateID	src/PlayState.h	/^        virtual std::string getStateID() const { return s_playID; }$/;"	f	class:PlayState	typeref:typename:std::string
@@ -585,6 +588,7 @@ init	src/Game.cpp	/^bool Game::init(const char* title, int x_pos, int y_pos, int
 init	src/lib/tinystr.h	/^	void init(size_type sz) { init(sz, sz); }$/;"	f	class:TiXmlString	typeref:typename:void
 init	src/lib/tinystr.h	/^	void init(size_type sz, size_type cap)$/;"	f	class:TiXmlString	typeref:typename:void
 initialiseJoysticks	src/InputHandler.cpp	/^void InputHandler::initialiseJoysticks()$/;"	f	class:InputHandler	typeref:typename:void
+isDead	src/Bullet.cpp	/^bool Bullet::isDead()$/;"	f	class:Bullet	typeref:typename:bool
 isKeyDown	src/InputHandler.cpp	/^bool InputHandler::isKeyDown(SDL_Scancode key)$/;"	f	class:InputHandler	typeref:typename:bool
 joysticksInitialised	src/InputHandler.h	/^        bool joysticksInitialised() { return m_bJoysticksInitialised; }$/;"	f	class:InputHandler	typeref:typename:bool
 lastChild	src/lib/tinyxml.h	/^	TiXmlNode*		lastChild;$/;"	m	class:TiXmlNode	typeref:typename:TiXmlNode *
@@ -600,7 +604,7 @@ m_acceleration	src/SDLGameObject.h	/^        Vector2D m_acceleration;$/;"	m	clas
 m_animSpeed	src/LoaderParams.h	/^        int m_animSpeed;$/;"	m	class:LoaderParams	typeref:typename:int
 m_bJoysticksInitialised	src/InputHandler.h	/^        bool m_bJoysticksInitialised;$/;"	m	class:InputHandler	typeref:typename:bool
 m_bRunning	src/Game.h	/^        bool m_bRunning;$/;"	m	class:Game	typeref:typename:bool
-m_bullet	src/Player.h	/^        Bullet* m_bullet;$/;"	m	class:Player	typeref:typename:Bullet *
+m_bullets	src/PlayState.h	/^        std::vector<std::unique_ptr<Bullet>> m_bullets;$/;"	m	class:PlayState	typeref:typename:std::vector<std::unique_ptr<Bullet>>
 m_buttonStates	src/InputHandler.h	/^        std::vector<std::vector<bool>> m_buttonStates;$/;"	m	class:InputHandler	typeref:typename:std::vector<std::vector<bool>>
 m_callbackID	src/LoaderParams.h	/^        int m_callbackID;$/;"	m	class:LoaderParams	typeref:typename:int
 m_creators	src/GameObjectFactory.h	/^        std::map<std::string, BaseCreator*> m_creators;$/;"	m	class:GameObjectFactory	typeref:typename:std::map<std::string,BaseCreator * >
@@ -616,6 +620,7 @@ m_height	src/SDLGameObject.h	/^        int m_height;$/;"	m	class:SDLGameObject	t
 m_joystickDeadZone	src/InputHandler.h	/^        const int m_joystickDeadZone = 10000;$/;"	m	class:InputHandler	typeref:typename:const int
 m_joystickValues	src/InputHandler.h	/^        std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;$/;"	m	class:InputHandler	typeref:typename:std::vector<std::pair<Vector2D *,Vector2D * >>
 m_joysticks	src/InputHandler.h	/^        std::vector<SDL_Joystick*> m_joysticks;$/;"	m	class:InputHandler	typeref:typename:std::vector<SDL_Joystick * >
+m_keysPressedThisFrame	src/InputHandler.h	/^        std::unordered_set<SDL_Scancode> m_keysPressedThisFrame; \/\/ 本帧新按下的键（非/;"	m	class:InputHandler	typeref:typename:std::unordered_set<SDL_Scancode>
 m_keystates	src/InputHandler.h	/^        const Uint8* m_keystates;$/;"	m	class:InputHandler	typeref:typename:const Uint8 *
 m_mouseButtonStates	src/InputHandler.h	/^        std::vector<bool> m_mouseButtonStates;$/;"	m	class:InputHandler	typeref:typename:std::vector<bool>
 m_mousePosition	src/InputHandler.h	/^        Vector2D* m_mousePosition;$/;"	m	class:InputHandler	typeref:typename:Vector2D *
@@ -767,6 +772,7 @@ utf8ByteTable	src/lib/tinyxmlparser.cpp	/^const int TiXmlBase::utf8ByteTable[256
 value	src/lib/tinyxml.h	/^	TIXML_STRING	value;$/;"	m	class:TiXmlNode	typeref:typename:TIXML_STRING
 value	src/lib/tinyxml.h	/^	TIXML_STRING value;$/;"	m	class:TiXmlAttribute	typeref:typename:TIXML_STRING
 version	src/lib/tinyxml.h	/^	TIXML_STRING version;$/;"	m	class:TiXmlDeclaration	typeref:typename:TIXML_STRING
+wasKeyPressedThisFrame	src/InputHandler.cpp	/^bool InputHandler::wasKeyPressedThisFrame(SDL_Scancode key)$/;"	f	class:InputHandler	typeref:typename:bool
 xvalue	src/InputHandler.cpp	/^int InputHandler::xvalue(int joy, int stick)$/;"	f	class:InputHandler	typeref:typename:int
 yvalue	src/InputHandler.cpp	/^int InputHandler::yvalue(int joy, int stick)$/;"	f	class:InputHandler	typeref:typename:int
 ~BaseCreator	src/GameObjectFactory.h	/^        virtual ~BaseCreator() {}$/;"	f	class:BaseCreator

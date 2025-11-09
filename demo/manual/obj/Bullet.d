@@ -1,4 +1,4 @@
-obj/Bullet.o: src/Bullet.cpp src/Bullet.h src/SDLGameObject.h \
+obj/Bullet.o: src/Bullet.cpp src/defs.h src/Bullet.h src/SDLGameObject.h \
  src/GameObject.h src/LoaderParams.h src/Vector2D.h \
  src/GameObjectFactory.h src/InputHandler.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
@@ -25,6 +25,7 @@ obj/Bullet.o: src/Bullet.cpp src/Bullet.h src/SDLGameObject.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
  /usr/include/SDL2/SDL_misc.h
+src/defs.h:
 src/Bullet.h:
 src/SDLGameObject.h:
 src/GameObject.h:

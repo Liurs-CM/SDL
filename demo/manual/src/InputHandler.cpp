@@ -68,7 +68,8 @@ void InputHandler::clean()
 
 void InputHandler::update()
 {
-	SDL_Event event;
+    m_keysPressedThisFrame.clear();
+    SDL_Event event;
 	while(SDL_PollEvent(&event))
 	{
 		switch(event.type)
@@ -103,6 +104,12 @@ void InputHandler::update()
 				
 			case SDL_KEYDOWN:
 				onKeyDown();
+                if (event.key.repeat == 0) 
+                {
+                    //std::cout << "key down once" << std::endl;
+                    SDL_Scancode sc = static_cast<SDL_Scancode>(event.key.keysym.scancode);
+                    m_keysPressedThisFrame.insert(sc);
+                }
 				break;
 				
 			case SDL_KEYUP:
@@ -182,6 +189,11 @@ bool InputHandler::isKeyDown(SDL_Scancode key)
 	}
 	
 	return false;
+}
+
+bool InputHandler::wasKeyPressedThisFrame(SDL_Scancode key)
+{
+    return m_keysPressedThisFrame.find(key) != m_keysPressedThisFrame.end();
 }
 
 void InputHandler::onJoystickAxisMove(SDL_Event& event) 

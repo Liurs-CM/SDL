@@ -1,4 +1,5 @@
 #include <string>
+#include <algorithm>
 #include <iostream>
 #include "PlayState.h"
 #include "TextureManager.h"
@@ -19,17 +20,33 @@ void PlayState::update()
         //TheGame::Instance()->getStateMachine()->pushState(new PauseState());
         std::cout << "exit PlayState" << std::endl;
     }
-    else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+    //else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+    else if(TheInputHandler::Instance()->wasKeyPressedThisFrame(SDL_SCANCODE_SPACE))
     {
-        if (bullet && player) 
-        {
-            Vector2D ppos = player->getPosition();
-            bullet->SetPosition(ppos);
-        }
+        createBullet();
+        //std::cout << "bullet num " << m_bullets.size() << std::endl;
     }
     for(auto* obj : m_gameObjects)
     {
-        obj->update();
+        if(dynamic_cast<Player*>(obj) != nullptr)
+        {
+            obj->update();
+        }
+    }
+    if(!m_bullets.empty())
+    {
+        for(auto& obj : m_bullets)
+        {
+            obj->update();
+            //std::cout << "bullet move " << dbg_num++ << std::endl;
+        }
+        m_bullets.erase(
+                std::remove_if(m_bullets.begin(), m_bullets.end(),
+                    [](const std::unique_ptr<Bullet>& b) {
+                    return b->isDead();  // 返回 true 表示要删除
+                    }),
+                m_bullets.end()
+                );
     }
     //pLevel->update();
 }
@@ -37,6 +54,13 @@ void PlayState::update()
 void PlayState::render()
 {
     for(auto* obj : m_gameObjects)
+    {
+        if(dynamic_cast<Player*>(obj) != nullptr)
+        {
+            obj->draw();
+        }
+    }
+    for(auto& obj : m_bullets)
     {
         obj->draw();
     }
@@ -53,14 +77,6 @@ bool PlayState::onEnter()
         {
             player = static_cast<Player*>(obj);
         }
-        else if(dynamic_cast<Bullet*>(obj) != nullptr)
-        {
-            bullet = static_cast<Bullet*>(obj);
-        }
-    }
-    if (bullet && player) 
-    {
-        std::cout << "get player bullet" << std::endl;
     }
     std::cout << "entering PlayState" << std::endl;
     //LevelParser levelParser;
@@ -75,8 +91,10 @@ bool PlayState::onExit()
         obj->clean();
     }
     m_gameObjects.clear();
+    m_bullets.clear();
     TheTextureManager::Instance()->clearFromTextureMap("pilot");
     TheTextureManager::Instance()->clearFromTextureMap("bullet");
+    TheTextureManager::Instance()->clearFromTextureMap("bullet_B");
     std::cout << "exiting PlayState" << std::endl;
     return true;
 }
@@ -106,4 +124,29 @@ bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)
     if(leftA >= rightB) { return false; }
 
     return true;
+}
+
+void PlayState::createBullet()
+{
+    Bullet* templateBullet = nullptr;
+    for(auto* obj : m_gameObjects)
+    {
+        if(dynamic_cast<Bullet*>(obj) != nullptr)
+        {
+            templateBullet = static_cast<Bullet*>(obj);
+        }
+    }
+    if(templateBullet == nullptr)
+    {
+        std::cout << "Error: No bullet template found in m_gameObjects!" << std::endl;
+        return;
+    }
+    // 克隆模板对象
+    auto newBullet = std::unique_ptr<Bullet>(
+        static_cast<Bullet*>(templateBullet->clone().release())
+    );
+    // 设置新位置
+    newBullet->SetPosition(player->getPosition());
+    // 添加到容器
+    m_bullets.push_back(std::move(newBullet));
 }

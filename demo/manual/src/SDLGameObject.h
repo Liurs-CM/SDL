@@ -1,6 +1,7 @@
 #ifndef __SDLGameObject__
 #define __SDLGameObject__
 #include <string>
+#include <memory>
 #include "GameObject.h"
 #include "LoaderParams.h"
 #include "Vector2D.h"
@@ -13,6 +14,7 @@ class SDLGameObject : public GameObject
         virtual void update();
         virtual void clean() {};
         virtual void load(const LoaderParams *pParams);
+        virtual std::unique_ptr<SDLGameObject> clone() { return nullptr; }
         Vector2D getPosition() { return m_position; }
         int getWidth() { return m_width; }
         int getHeight() { return m_height; }

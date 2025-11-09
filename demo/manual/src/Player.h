@@ -11,10 +11,8 @@ class Player : public SDLGameObject
         void draw();
         void update();
         void clean();
-        void shoot();
         void load(const LoaderParams* pParams);
     private:
-        Bullet* m_bullet;
         void handleInput();
 };
 
