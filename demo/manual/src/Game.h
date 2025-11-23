@@ -3,7 +3,6 @@
 #include "SDL.h"
 #include "Vector2D.h"
 #include "TextureManager.h"
-#include "Player.h"
 #include "GameStateMachine.h"
 #include "PlayState.h"
 

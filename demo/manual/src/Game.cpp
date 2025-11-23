@@ -51,6 +51,7 @@ bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
     std::cout << "init success\n";
     m_bRunning = true;
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
     TheGameObjectFactory::Instance()->registerType("Bullet", new BulletCreator());
 
 	m_pGameStateMachine = new GameStateMachine();

@@ -43,6 +43,10 @@ bool Bullet::isDead()
     {
         return true;
     }
+    else if(collision_state)
+    {
+        return true;
+    }
     else
     {
         return false;

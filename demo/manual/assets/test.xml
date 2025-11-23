@@ -3,10 +3,12 @@
     <PLAY>
         <TEXTURES>
             <texture filename="assets/pilot.png" ID="pilot"/>
+            <texture filename="assets/enemy.png" ID="enemy"/>
             <texture filename="assets/bullet_B.png" ID="bullet_B"/>
         </TEXTURES>
         <OBJECTS>
             <object type="Player" x="100" y="100" width="64" height="64" textureID="pilot" numFrames="0"/>
+            <object type="Enemy" x="100" y="100" width="64" height="64" textureID="enemy" numFrames="0"/>
             <object type="Bullet" x="100" y="100" width="32" height="16" textureID="bullet_B" numFrames="0"/>
         </OBJECTS>
     </PLAY>

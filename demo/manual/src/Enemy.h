@@ -1,14 +1,13 @@
-#ifndef __Bullet__
-#define __Bullet__
+#ifndef __Enemy__
+#define __Enemy__
 //#include "Player.h"
 #include "SDLGameObject.h"
 #include "GameObjectFactory.h"
-class Player;
 
-class Bullet : public SDLGameObject
+class Enemy : public SDLGameObject
 {
     public:
-        Bullet();
+        Enemy();
         void draw();
         void update();
         void clean();
@@ -21,13 +20,13 @@ class Bullet : public SDLGameObject
         void handleInput();
 };
 
-class BulletCreator : public BaseCreator
+class EnemyCreator : public BaseCreator
 {
     public:	
         GameObject* createGameObject() const
         {
-            return new Bullet();
+            return new Enemy();
         }
 };
 
-#endif /* defined(__Bullet__) */
+#endif /* defined(__Enemy__) */

@@ -1,6 +1,7 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include "defs.h"
 #include "PlayState.h"
 #include "TextureManager.h"
 #include "Game.h"
@@ -33,6 +34,21 @@ void PlayState::update()
             obj->update();
         }
     }
+    for(const auto& enemy_ptr : m_enemies)
+    {
+        if(!enemy_ptr) continue;
+        SDLGameObject& obj_e = *enemy_ptr;
+        for(const auto& bullet_ptr : m_bullets)
+        {
+            if(!bullet_ptr) continue;
+            SDLGameObject& obj_b = *bullet_ptr;
+            if( checkCollision(&obj_e, &obj_b))
+            {
+                enemy_ptr->collision_state = true;
+                bullet_ptr->collision_state = true;
+            }
+        }
+    }
     if(!m_bullets.empty())
     {
         for(auto& obj : m_bullets)
@@ -48,6 +64,21 @@ void PlayState::update()
                 m_bullets.end()
                 );
     }
+    if(!m_enemies.empty())
+    {
+        for(auto& obj : m_enemies)
+        {
+            obj->update();
+        }
+        m_enemies.erase(
+                std::remove_if(m_enemies.begin(), m_enemies.end(),
+                    [](const std::unique_ptr<Enemy>& b) {
+                    return b->isDead();  // 返回 true 表示要删除
+                    }),
+                m_enemies.end()
+                );
+    }
+    spawnEnemies();
     //pLevel->update();
 }
 
@@ -61,6 +92,10 @@ void PlayState::render()
         }
     }
     for(auto& obj : m_bullets)
+    {
+        obj->draw();
+    }
+    for(auto& obj : m_enemies)
     {
         obj->draw();
     }
@@ -92,9 +127,11 @@ bool PlayState::onExit()
     }
     m_gameObjects.clear();
     m_bullets.clear();
+    m_enemies.clear();
     TheTextureManager::Instance()->clearFromTextureMap("pilot");
     TheTextureManager::Instance()->clearFromTextureMap("bullet");
     TheTextureManager::Instance()->clearFromTextureMap("bullet_B");
+    TheTextureManager::Instance()->clearFromTextureMap("enemy");
     std::cout << "exiting PlayState" << std::endl;
     return true;
 }
@@ -105,24 +142,20 @@ bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)
     int rightA, rightB;
     int topA, topB;
     int bottomA, bottomB;
-
     leftA = p1->getPosition().getX();
     rightA = p1->getPosition().getX() + p1->getWidth();
     topA = p1->getPosition().getY();
     bottomA = p1->getPosition().getY() + p1->getHeight();
-
     // Calculate the sides of rect B
     leftB = p2->getPosition().getX();
     rightB = p2->getPosition().getX() + p2->getWidth();
     topB = p2->getPosition().getY();
     bottomB = p2->getPosition().getY() + p2->getHeight();
-
     // If any of the sides from A are outside of B
     if(bottomA <= topB) { return false; }
     if(topA >= bottomB) { return false; }
     if(rightA <= leftB) { return false; }
     if(leftA >= rightB) { return false; }
-
     return true;
 }
 
@@ -149,4 +182,33 @@ void PlayState::createBullet()
     newBullet->SetPosition(player->getPosition());
     // 添加到容器
     m_bullets.push_back(std::move(newBullet));
+}
+
+void PlayState::spawnEnemies()
+{
+    if (--enemySpawnTimer <= 0)
+    {
+        enemySpawnTimer = 1000 + (rand() % 60);
+        Enemy* templateEnemy = nullptr;
+        for(auto* obj : m_gameObjects)
+        {
+            if(dynamic_cast<Enemy*>(obj) != nullptr)
+            {
+                templateEnemy = static_cast<Enemy*>(obj);
+            }
+        }
+        if(templateEnemy == nullptr)
+        {
+            std::cout << "Error: No enemy template found in m_gameObjects!" << std::endl;
+            return;
+        }
+        // 克隆模板对象
+        auto newEnemy = std::unique_ptr<Enemy>(
+                static_cast<Enemy*>(templateEnemy->clone().release())
+                );
+        // 设置新位置
+        newEnemy->SetPosition(Vector2D(SCR_W, rand()%SCR_H));
+        // 添加到容器
+        m_enemies.push_back(std::move(newEnemy));
+    }
 }

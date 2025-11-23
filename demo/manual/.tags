@@ -98,6 +98,9 @@ DoubleValue	src/lib/tinyxml.cpp	/^double  TiXmlAttribute::DoubleValue() const$/;
 Element	src/lib/tinyxml.h	/^	TiXmlElement* Element() const	{ return ToElement(); }$/;"	f	class:TiXmlHandle	typeref:typename:TiXmlElement *
 EncodeString	src/lib/tinyxml.cpp	/^void TiXmlBase::EncodeString( const TIXML_STRING& str, TIXML_STRING* outString )$/;"	f	class:TiXmlBase	typeref:typename:void
 Encoding	src/lib/tinyxml.h	/^	const char *Encoding() const		{ return encoding.c_str (); }$/;"	f	class:TiXmlDeclaration	typeref:typename:const char *
+Enemy	src/Enemy.cpp	/^Enemy::Enemy() : SDLGameObject() {}$/;"	f	class:Enemy
+Enemy	src/Enemy.h	/^class Enemy : public SDLGameObject$/;"	c
+EnemyCreator	src/Enemy.h	/^class EnemyCreator : public BaseCreator$/;"	c
 Entity	src/lib/tinyxml.h	/^	struct Entity$/;"	s	class:TiXmlBase
 Error	src/lib/tinyxml.h	/^	bool Error() const						{ return error; }$/;"	f	class:TiXmlDocument	typeref:typename:bool
 ErrorCol	src/lib/tinyxml.h	/^	int ErrorCol() const	{ return errorLocation.col+1; }	\/\/\/< The column where the error occured/;"	f	class:TiXmlDocument	typeref:typename:int
@@ -295,6 +298,7 @@ SetLineBreak	src/lib/tinyxml.h	/^	void SetLineBreak( const char* _lineBreak )		{
 SetName	src/lib/tinyxml.h	/^	void SetName( const char* _name )	{ name = _name; }				\/\/\/< Set the name of this attribute.$/;"	f	class:TiXmlAttribute	typeref:typename:void
 SetName	src/lib/tinyxml.h	/^	void SetName( const std::string& _name )	{ name = _name; }	$/;"	f	class:TiXmlAttribute	typeref:typename:void
 SetPosition	src/Bullet.cpp	/^void Bullet::SetPosition(Vector2D pos) $/;"	f	class:Bullet	typeref:typename:void
+SetPosition	src/Enemy.cpp	/^void Enemy::SetPosition(Vector2D pos) $/;"	f	class:Enemy	typeref:typename:void
 SetStreamPrinting	src/lib/tinyxml.h	/^	void SetStreamPrinting()						{ indent = "";$/;"	f	class:TiXmlPrinter	typeref:typename:void
 SetTabSize	src/lib/tinyxml.h	/^	void SetTabSize( int _tabsize )		{ tabsize = _tabsize; }$/;"	f	class:TiXmlDocument	typeref:typename:void
 SetUserData	src/lib/tinyxml.h	/^	void  SetUserData( void* user )			{ userData = user; }	\/\/\/< Set a pointer to arbitrary user /;"	f	class:TiXmlBase	typeref:typename:void
@@ -480,6 +484,7 @@ VisitExit	src/lib/tinyxml.cpp	/^bool TiXmlPrinter::VisitExit( const TiXmlElement
 VisitExit	src/lib/tinyxml.h	/^	virtual bool VisitExit( const TiXmlDocument& \/*doc*\/ )			{ return true; }$/;"	f	class:TiXmlVisitor	typeref:typename:bool
 VisitExit	src/lib/tinyxml.h	/^	virtual bool VisitExit( const TiXmlElement& \/*element*\/ )		{ return true; }$/;"	f	class:TiXmlVisitor	typeref:typename:bool
 __Bullet__	src/Bullet.h	/^#define __Bullet__$/;"	d
+__Enemy__	src/Enemy.h	/^#define __Enemy__$/;"	d
 __GameObjectFactory__	src/GameObjectFactory.h	/^#define __GameObjectFactory__$/;"	d
 __GameObject__	src/GameObject.h	/^#define __GameObject__$/;"	d
 __GameStateMachine__	src/GameStateMachine.h	/^#define __GameStateMachine__$/;"	d
@@ -499,13 +504,13 @@ __anon256b08ed0103	src/lib/tinyxml.h	/^{ $/;"	g
 __anon256b08ed0203	src/lib/tinyxml.h	/^	{$/;"	g	class:TiXmlBase
 __anon256b08ed0303	src/lib/tinyxml.h	/^	{$/;"	g	class:TiXmlBase
 __anondc818da40102	src/PlayState.cpp	/^                    [](const std::unique_ptr<Bullet>& b) {$/;"	f	function:PlayState::update	file:
+__anondc818da40202	src/PlayState.cpp	/^                    [](const std::unique_ptr<Enemy>& b) {$/;"	f	function:PlayState::update	file:
 __def__	src/defs.h	/^#define __def__$/;"	d
 append	src/lib/tinystr.cpp	/^TiXmlString& TiXmlString::append(const char* str, size_type len)$/;"	f	class:TiXmlString	typeref:typename:TiXmlString &
 assign	src/lib/tinystr.cpp	/^TiXmlString& TiXmlString::assign(const char* str, size_type len)$/;"	f	class:TiXmlString	typeref:typename:TiXmlString &
 at	src/lib/tinystr.h	/^	const char& at (size_type index) const$/;"	f	class:TiXmlString	typeref:typename:const char &
 attributeSet	src/lib/tinyxml.h	/^	TiXmlAttributeSet attributeSet;$/;"	m	class:TiXmlElement	typeref:typename:TiXmlAttributeSet
 buffer	src/lib/tinyxml.h	/^	TIXML_STRING buffer;$/;"	m	class:TiXmlPrinter	typeref:typename:TIXML_STRING
-bullet	src/PlayState.h	/^        Bullet* bullet = nullptr;$/;"	m	class:PlayState	typeref:typename:Bullet *
 c_str	src/lib/tinystr.h	/^	const char * c_str () const { return rep_->str; }$/;"	f	class:TiXmlString	typeref:typename:const char *
 capacity	src/lib/tinystr.h	/^		size_type size, capacity;$/;"	m	struct:TiXmlString::Rep	typeref:typename:size_type
 capacity	src/lib/tinystr.h	/^	size_type capacity () const { return rep_->capacity; }$/;"	f	class:TiXmlString	typeref:typename:size_type
@@ -516,6 +521,7 @@ changeStatePrivate	src/GameStateMachine.cpp	/^void GameStateMachine::changeState
 checkCollision	src/PlayState.cpp	/^bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)$/;"	f	class:PlayState	typeref:typename:bool
 chr	src/lib/tinyxml.h	/^		char		    chr;$/;"	m	struct:TiXmlBase::Entity	typeref:typename:char
 clean	src/Bullet.cpp	/^void Bullet::clean() { }$/;"	f	class:Bullet	typeref:typename:void
+clean	src/Enemy.cpp	/^void Enemy::clean() { }$/;"	f	class:Enemy	typeref:typename:void
 clean	src/Game.cpp	/^void Game::clean()$/;"	f	class:Game	typeref:typename:void
 clean	src/InputHandler.cpp	/^void InputHandler::clean()$/;"	f	class:InputHandler	typeref:typename:void
 clean	src/Player.cpp	/^void Player::clean() { }$/;"	f	class:Player	typeref:typename:void
@@ -523,13 +529,17 @@ clean	src/SDLGameObject.h	/^        virtual void clean() {};$/;"	f	class:SDLGame
 clear	src/lib/tinystr.h	/^	void clear ()$/;"	f	class:TiXmlString	typeref:typename:void
 clearFromTextureMap	src/TextureManager.cpp	/^void TextureManager::clearFromTextureMap(std::string id)$/;"	f	class:TextureManager	typeref:typename:void
 clone	src/Bullet.cpp	/^std::unique_ptr<SDLGameObject> Bullet::clone()$/;"	f	class:Bullet	typeref:typename:std::unique_ptr<SDLGameObject>
+clone	src/Enemy.cpp	/^std::unique_ptr<SDLGameObject> Enemy::clone()$/;"	f	class:Enemy	typeref:typename:std::unique_ptr<SDLGameObject>
 clone	src/SDLGameObject.h	/^        virtual std::unique_ptr<SDLGameObject> clone() { return nullptr; }$/;"	f	class:SDLGameObject	typeref:typename:std::unique_ptr<SDLGameObject>
 col	src/lib/tinyxml.h	/^	int col;	\/\/ 0 based.$/;"	m	struct:TiXmlCursor	typeref:typename:int
+collision_state	src/Bullet.h	/^        bool collision_state = false;$/;"	m	class:Bullet	typeref:typename:bool
+collision_state	src/Enemy.h	/^        bool collision_state = false;$/;"	m	class:Enemy	typeref:typename:bool
 condenseWhiteSpace	src/lib/tinyxml.cpp	/^bool TiXmlBase::condenseWhiteSpace = true;$/;"	m	class:TiXmlBase	typeref:typename:bool
 condenseWhiteSpace	src/lib/tinyxml.h	/^	static bool condenseWhiteSpace;$/;"	m	class:TiXmlBase	typeref:typename:bool
 create	src/GameObjectFactory.h	/^        GameObject* create(std::string typeID)$/;"	f	class:GameObjectFactory	typeref:typename:GameObject *
 createBullet	src/PlayState.cpp	/^void PlayState::createBullet()$/;"	f	class:PlayState	typeref:typename:void
 createGameObject	src/Bullet.h	/^        GameObject* createGameObject() const$/;"	f	class:BulletCreator	typeref:typename:GameObject *
+createGameObject	src/Enemy.h	/^        GameObject* createGameObject() const$/;"	f	class:EnemyCreator	typeref:typename:GameObject *
 createGameObject	src/Player.h	/^        GameObject* createGameObject() const$/;"	f	class:PlayerCreator	typeref:typename:GameObject *
 cursor	src/lib/tinyxmlparser.cpp	/^	TiXmlCursor		cursor;$/;"	m	class:TiXmlParsingData	typeref:typename:TiXmlCursor	file:
 data	src/lib/tinystr.h	/^	const char * data () const { return rep_->str; }$/;"	f	class:TiXmlString	typeref:typename:const char *
@@ -537,6 +547,7 @@ dbg_num	src/PlayState.h	/^        int dbg_num = 0;$/;"	m	class:PlayState	typeref
 depth	src/lib/tinyxml.h	/^	int depth;$/;"	m	class:TiXmlPrinter	typeref:typename:int
 document	src/lib/tinyxml.h	/^	TiXmlDocument*	document;	\/\/ A pointer back to a document, for error reporting.$/;"	m	class:TiXmlAttribute	typeref:typename:TiXmlDocument *
 draw	src/Bullet.cpp	/^void Bullet::draw()$/;"	f	class:Bullet	typeref:typename:void
+draw	src/Enemy.cpp	/^void Enemy::draw()$/;"	f	class:Enemy	typeref:typename:void
 draw	src/Player.cpp	/^void Player::draw()$/;"	f	class:Player	typeref:typename:void
 draw	src/SDLGameObject.cpp	/^void SDLGameObject::draw()$/;"	f	class:SDLGameObject	typeref:typename:void
 draw	src/TextureManager.cpp	/^void TextureManager::draw($/;"	f	class:TextureManager	typeref:typename:void
@@ -544,6 +555,7 @@ drawFrame	src/TextureManager.cpp	/^void TextureManager::drawFrame(std::string id
 drawTile	src/TextureManager.cpp	/^void TextureManager::drawTile(std::string id, int margin, int spacing, int x, int y, int width, /;"	f	class:TextureManager	typeref:typename:void
 empty	src/lib/tinystr.h	/^	bool empty () const { return rep_->size == 0; }$/;"	f	class:TiXmlString	typeref:typename:bool
 encoding	src/lib/tinyxml.h	/^	TIXML_STRING encoding;$/;"	m	class:TiXmlDeclaration	typeref:typename:TIXML_STRING
+enemySpawnTimer	src/PlayState.h	/^        int enemySpawnTimer = 10;$/;"	m	class:PlayState	typeref:typename:int
 entity	src/lib/tinyxml.h	/^	static Entity entity[ NUM_ENTITY ];$/;"	m	class:TiXmlBase	typeref:typename:Entity[]
 entity	src/lib/tinyxmlparser.cpp	/^TiXmlBase::Entity TiXmlBase::entity[ TiXmlBase::NUM_ENTITY ] = $/;"	m	class:TiXmlBase	typeref:typename:TiXmlBase::Entity[]
 error	src/lib/tinyxml.h	/^	bool error;$/;"	m	class:TiXmlDocument	typeref:typename:bool
@@ -582,6 +594,7 @@ getY	src/LoaderParams.h	/^        int getY() const { return m_y; }$/;"	f	class:L
 getY	src/Vector2D.h	/^        float getY() { return m_y; }$/;"	f	class:Vector2D	typeref:typename:float
 handleEvents	src/Game.cpp	/^void Game::handleEvents()$/;"	f	class:Game	typeref:typename:void
 handleInput	src/Bullet.cpp	/^void Bullet::handleInput()$/;"	f	class:Bullet	typeref:typename:void
+handleInput	src/Enemy.cpp	/^void Enemy::handleInput()$/;"	f	class:Enemy	typeref:typename:void
 handleInput	src/Player.cpp	/^void Player::handleInput()$/;"	f	class:Player	typeref:typename:void
 indent	src/lib/tinyxml.h	/^	TIXML_STRING indent;$/;"	m	class:TiXmlPrinter	typeref:typename:TIXML_STRING
 init	src/Game.cpp	/^bool Game::init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen)$/;"	f	class:Game	typeref:typename:bool
@@ -589,6 +602,7 @@ init	src/lib/tinystr.h	/^	void init(size_type sz) { init(sz, sz); }$/;"	f	class:
 init	src/lib/tinystr.h	/^	void init(size_type sz, size_type cap)$/;"	f	class:TiXmlString	typeref:typename:void
 initialiseJoysticks	src/InputHandler.cpp	/^void InputHandler::initialiseJoysticks()$/;"	f	class:InputHandler	typeref:typename:void
 isDead	src/Bullet.cpp	/^bool Bullet::isDead()$/;"	f	class:Bullet	typeref:typename:bool
+isDead	src/Enemy.cpp	/^bool Enemy::isDead()$/;"	f	class:Enemy	typeref:typename:bool
 isKeyDown	src/InputHandler.cpp	/^bool InputHandler::isKeyDown(SDL_Scancode key)$/;"	f	class:InputHandler	typeref:typename:bool
 joysticksInitialised	src/InputHandler.h	/^        bool joysticksInitialised() { return m_bJoysticksInitialised; }$/;"	f	class:InputHandler	typeref:typename:bool
 lastChild	src/lib/tinyxml.h	/^	TiXmlNode*		lastChild;$/;"	m	class:TiXmlNode	typeref:typename:TiXmlNode *
@@ -596,6 +610,7 @@ length	src/Vector2D.h	/^        float length() { return sqrt(m_x * m_x + m_y * m
 length	src/lib/tinystr.h	/^	size_type length () const { return rep_->size; }$/;"	f	class:TiXmlString	typeref:typename:size_type
 lineBreak	src/lib/tinyxml.h	/^	TIXML_STRING lineBreak;$/;"	m	class:TiXmlPrinter	typeref:typename:TIXML_STRING
 load	src/Bullet.cpp	/^void Bullet::load(const LoaderParams *pParams)$/;"	f	class:Bullet	typeref:typename:void
+load	src/Enemy.cpp	/^void Enemy::load(const LoaderParams *pParams)$/;"	f	class:Enemy	typeref:typename:void
 load	src/Player.cpp	/^void Player::load(const LoaderParams *pParams)$/;"	f	class:Player	typeref:typename:void
 load	src/SDLGameObject.cpp	/^void SDLGameObject::load(const LoaderParams *pParams)$/;"	f	class:SDLGameObject	typeref:typename:void
 load	src/TextureManager.cpp	/^bool TextureManager::load($/;"	f	class:TextureManager	typeref:typename:bool
@@ -610,6 +625,7 @@ m_callbackID	src/LoaderParams.h	/^        int m_callbackID;$/;"	m	class:LoaderPa
 m_creators	src/GameObjectFactory.h	/^        std::map<std::string, BaseCreator*> m_creators;$/;"	m	class:GameObjectFactory	typeref:typename:std::map<std::string,BaseCreator * >
 m_currentFrame	src/SDLGameObject.h	/^        int m_currentFrame;$/;"	m	class:SDLGameObject	typeref:typename:int
 m_currentRow	src/SDLGameObject.h	/^        int m_currentRow;$/;"	m	class:SDLGameObject	typeref:typename:int
+m_enemies	src/PlayState.h	/^        std::vector<std::unique_ptr<Enemy>> m_enemies;$/;"	m	class:PlayState	typeref:typename:std::vector<std::unique_ptr<Enemy>>
 m_gameHeight	src/Game.h	/^        int m_gameHeight;$/;"	m	class:Game	typeref:typename:int
 m_gameObjects	src/ObjectLayer.h	/^        std::vector<GameObject*> m_gameObjects;$/;"	m	class:ObjectLayer	typeref:typename:std::vector<GameObject * >
 m_gameObjects	src/PlayState.h	/^        std::vector<GameObject*> m_gameObjects;$/;"	m	class:PlayState	typeref:typename:std::vector<GameObject * >
@@ -746,6 +762,7 @@ simpleTextPrint	src/lib/tinyxml.h	/^	bool simpleTextPrint;$/;"	m	class:TiXmlPrin
 size	src/lib/tinystr.h	/^		size_type size, capacity;$/;"	m	struct:TiXmlString::Rep	typeref:typename:size_type
 size	src/lib/tinystr.h	/^	size_type size () const { return rep_->size; }$/;"	f	class:TiXmlString	typeref:typename:size_type
 size_type	src/lib/tinystr.h	/^  	typedef size_t size_type;$/;"	t	class:TiXmlString	typeref:typename:size_t
+spawnEnemies	src/PlayState.cpp	/^void PlayState::spawnEnemies()$/;"	f	class:PlayState	typeref:typename:void
 stamp	src/lib/tinyxmlparser.cpp	/^	const char*		stamp;$/;"	m	class:TiXmlParsingData	typeref:typename:const char *	file:
 standalone	src/lib/tinyxml.h	/^	TIXML_STRING standalone;$/;"	m	class:TiXmlDeclaration	typeref:typename:TIXML_STRING
 start	src/lib/tinystr.h	/^	char* start() const { return rep_->str; }$/;"	f	class:TiXmlString	typeref:typename:char *
@@ -758,6 +775,7 @@ tabsize	src/lib/tinyxml.h	/^	int tabsize;$/;"	m	class:TiXmlDocument	typeref:type
 tabsize	src/lib/tinyxmlparser.cpp	/^	int				tabsize;$/;"	m	class:TiXmlParsingData	typeref:typename:int	file:
 type	src/lib/tinyxml.h	/^	NodeType		type;$/;"	m	class:TiXmlNode	typeref:typename:NodeType
 update	src/Bullet.cpp	/^void Bullet::update()$/;"	f	class:Bullet	typeref:typename:void
+update	src/Enemy.cpp	/^void Enemy::update()$/;"	f	class:Enemy	typeref:typename:void
 update	src/Game.cpp	/^void Game::update()$/;"	f	class:Game	typeref:typename:void
 update	src/GameStateMachine.cpp	/^void GameStateMachine::update()$/;"	f	class:GameStateMachine	typeref:typename:void
 update	src/InputHandler.cpp	/^void InputHandler::update()$/;"	f	class:InputHandler	typeref:typename:void

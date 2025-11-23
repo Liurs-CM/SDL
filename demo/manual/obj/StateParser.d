@@ -25,8 +25,8 @@ obj/StateParser.o: src/StateParser.cpp src/StateParser.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
  /usr/include/SDL2/SDL_misc.h src/Vector2D.h src/TextureManager.h \
- src/Player.h src/SDLGameObject.h src/Bullet.h src/GameStateMachine.h \
- src/GameState.h src/PlayState.h
+ src/GameStateMachine.h src/GameState.h src/PlayState.h src/Bullet.h \
+ src/SDLGameObject.h src/Enemy.h src/Player.h
 src/StateParser.h:
 src/lib/tinyxml.h:
 src/lib/tinystr.h:
@@ -84,9 +84,10 @@ src/Game.h:
 /usr/include/SDL2/SDL_misc.h:
 src/Vector2D.h:
 src/TextureManager.h:
-src/Player.h:
-src/SDLGameObject.h:
-src/Bullet.h:
 src/GameStateMachine.h:
 src/GameState.h:
 src/PlayState.h:
+src/Bullet.h:
+src/SDLGameObject.h:
+src/Enemy.h:
+src/Player.h:

@@ -24,8 +24,8 @@ obj/SDLGameObject.o: src/SDLGameObject.cpp src/SDLGameObject.h \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h src/Game.h \
- src/Player.h src/GameObjectFactory.h src/Bullet.h src/GameStateMachine.h \
- src/GameState.h src/PlayState.h src/defs.h
+ src/GameStateMachine.h src/GameState.h src/PlayState.h src/Bullet.h \
+ src/GameObjectFactory.h src/Enemy.h src/Player.h src/defs.h
 src/SDLGameObject.h:
 src/GameObject.h:
 src/LoaderParams.h:
@@ -80,10 +80,11 @@ src/TextureManager.h:
 /usr/include/SDL2/SDL_locale.h:
 /usr/include/SDL2/SDL_misc.h:
 src/Game.h:
-src/Player.h:
-src/GameObjectFactory.h:
-src/Bullet.h:
 src/GameStateMachine.h:
 src/GameState.h:
 src/PlayState.h:
+src/Bullet.h:
+src/GameObjectFactory.h:
+src/Enemy.h:
+src/Player.h:
 src/defs.h:

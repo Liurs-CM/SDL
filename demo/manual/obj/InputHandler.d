@@ -23,10 +23,10 @@ obj/InputHandler.o: src/InputHandler.cpp src/InputHandler.h \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- src/Vector2D.h src/Game.h src/TextureManager.h src/Player.h \
- src/SDLGameObject.h src/GameObject.h src/LoaderParams.h \
- src/GameObjectFactory.h src/Bullet.h src/GameStateMachine.h \
- src/GameState.h src/PlayState.h
+ src/Vector2D.h src/Game.h src/TextureManager.h src/GameStateMachine.h \
+ src/GameState.h src/PlayState.h src/Bullet.h src/SDLGameObject.h \
+ src/GameObject.h src/LoaderParams.h src/GameObjectFactory.h src/Enemy.h \
+ src/Player.h
 src/InputHandler.h:
 /usr/include/SDL2/SDL.h:
 /usr/include/SDL2/SDL_main.h:
@@ -79,12 +79,13 @@ src/InputHandler.h:
 src/Vector2D.h:
 src/Game.h:
 src/TextureManager.h:
-src/Player.h:
+src/GameStateMachine.h:
+src/GameState.h:
+src/PlayState.h:
+src/Bullet.h:
 src/SDLGameObject.h:
 src/GameObject.h:
 src/LoaderParams.h:
 src/GameObjectFactory.h:
-src/Bullet.h:
-src/GameStateMachine.h:
-src/GameState.h:
-src/PlayState.h:
+src/Enemy.h:
+src/Player.h:

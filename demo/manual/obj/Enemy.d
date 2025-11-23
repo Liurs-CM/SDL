@@ -1,6 +1,6 @@
-obj/Player.o: src/Player.cpp src/Player.h src/SDLGameObject.h \
+obj/Enemy.o: src/Enemy.cpp src/defs.h src/Enemy.h src/SDLGameObject.h \
  src/GameObject.h src/LoaderParams.h src/Vector2D.h \
- src/GameObjectFactory.h src/InputHandler.h /usr/include/SDL2/SDL.h \
+ src/GameObjectFactory.h src/Game.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_assert.h \
  /usr/include/SDL2/SDL_atomic.h /usr/include/SDL2/SDL_platform.h \
@@ -24,14 +24,17 @@ obj/Player.o: src/Player.cpp src/Player.h src/SDLGameObject.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h
-src/Player.h:
+ /usr/include/SDL2/SDL_misc.h src/TextureManager.h src/GameStateMachine.h \
+ src/GameState.h src/PlayState.h src/Bullet.h src/Player.h \
+ src/InputHandler.h
+src/defs.h:
+src/Enemy.h:
 src/SDLGameObject.h:
 src/GameObject.h:
 src/LoaderParams.h:
 src/Vector2D.h:
 src/GameObjectFactory.h:
-src/InputHandler.h:
+src/Game.h:
 /usr/include/SDL2/SDL.h:
 /usr/include/SDL2/SDL_main.h:
 /usr/include/SDL2/SDL_stdinc.h:
@@ -80,3 +83,10 @@ src/InputHandler.h:
 /usr/include/SDL2/SDL_version.h:
 /usr/include/SDL2/SDL_locale.h:
 /usr/include/SDL2/SDL_misc.h:
+src/TextureManager.h:
+src/GameStateMachine.h:
+src/GameState.h:
+src/PlayState.h:
+src/Bullet.h:
+src/Player.h:
+src/InputHandler.h:

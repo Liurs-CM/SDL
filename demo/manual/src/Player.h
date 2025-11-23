@@ -2,7 +2,6 @@
 #define __Player__
 #include "SDLGameObject.h"
 #include "GameObjectFactory.h"
-#include "Bullet.h"
 
 class Player : public SDLGameObject
 {
