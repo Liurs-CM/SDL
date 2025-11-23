@@ -11,7 +11,7 @@ void Bullet::draw()
 
 void Bullet::update()
 {
-    m_position += Vector2D(1,0);
+    m_position += Vector2D(0.2,0);
 	handleInput();
     SDLGameObject::update();
 }
